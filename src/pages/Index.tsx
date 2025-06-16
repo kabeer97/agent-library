@@ -1,4 +1,5 @@
 
+
 import React, { useState, useMemo } from 'react';
 import { Header } from '@/components/Header';
 import { SearchBar } from '@/components/SearchBar';
@@ -210,16 +211,25 @@ const Index: React.FC = () => {
   }, [useCases, searchQuery, filters, currentSort]);
 
   return (
-    <div className="bg-[rgba(255,254,250,1)] min-h-screen">
+    <div className="bg-white min-h-screen">
       <Header />
       
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2043716e4cb7f38145f40fd52ae459059be32471?placeholderIfAbsent=true"
-        alt="Hero banner"
-        className="aspect-[6.21] object-contain w-full pt-[60px] max-md:max-w-full"
-      />
+      {/* Banner Section */}
+      <div className="w-full bg-gradient-to-r from-green-100 via-green-200 to-green-300 relative overflow-hidden">
+        <div className="px-[150px] py-20 max-md:px-5 max-md:py-12">
+          <h1 className="text-6xl font-bold text-gray-900 max-md:text-4xl">
+            AI Agent Library
+          </h1>
+        </div>
+        {/* Decorative curved elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-30">
+          <svg viewBox="0 0 400 200" className="w-full h-full">
+            <path d="M0,100 Q200,0 400,100 L400,200 L0,200 Z" fill="rgba(34,197,94,0.3)" />
+          </svg>
+        </div>
+      </div>
       
-      <main className="px-[150px] py-[60px] max-md:px-5">
+      <main className="px-[150px] py-12 max-md:px-5">
         <SearchBar
           value={searchQuery}
           onChange={setSearchQuery}
@@ -257,3 +267,4 @@ const Index: React.FC = () => {
 };
 
 export default Index;
+
