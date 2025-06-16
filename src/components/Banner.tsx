@@ -1,13 +1,33 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { ImageUpload } from './ImageUpload';
 
 export const Banner: React.FC = () => {
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
+
+  const handleImageUpload = (imageUrl: string) => {
+    setBackgroundImage(imageUrl);
+  };
+
   return (
     <div className="w-full bg-gradient-to-r from-green-50 via-green-100 to-green-150 relative overflow-hidden">
+      {/* Background image overlay */}
+      {backgroundImage && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
+          <div className="absolute inset-0 bg-green-50/60"></div>
+        </div>
+      )}
+      
       <div className="px-[150px] py-20 max-md:px-5 max-md:py-12 relative z-10">
-        <h1 className="text-6xl font-bold text-gray-900 max-md:text-4xl">
-          AI Agent Library
-        </h1>
+        <div className="flex justify-between items-start">
+          <h1 className="text-6xl font-bold text-gray-900 max-md:text-4xl">
+            AI Agent Library
+          </h1>
+          <ImageUpload onImageUpload={handleImageUpload} />
+        </div>
       </div>
       
       {/* Organic curved background shapes */}
