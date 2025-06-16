@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Header } from '@/components/Header';
 import { SearchBar } from '@/components/SearchBar';
@@ -226,9 +227,11 @@ const Index: React.FC = () => {
         />
         
         <div className="flex gap-6 mt-6 max-md:flex-col">
-          <FilterSidebar onFilterChange={handleFilterChange} />
+          <div className="w-1/4 max-md:w-full">
+            <FilterSidebar onFilterChange={handleFilterChange} />
+          </div>
           
-          <div className="flex-1">
+          <div className="w-3/4 max-md:w-full">
             <SortControls
               itemCount={filteredAndSortedUseCases.length}
               currentSort={currentSort}
