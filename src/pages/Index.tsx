@@ -209,50 +209,46 @@ const Index: React.FC = () => {
   }, [useCases, searchQuery, filters, currentSort]);
 
   return (
-    <div className="bg-[rgba(255,254,250,1)] overflow-hidden min-h-screen">
-      <div className="flex w-full flex-col items-center max-md:max-w-full">
-        <Header />
-        
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2043716e4cb7f38145f40fd52ae459059be32471?placeholderIfAbsent=true"
-          alt="Hero banner"
-          className="aspect-[6.21] object-contain w-full pt-[60px] max-md:max-w-full"
+    <div className="bg-[rgba(255,254,250,1)] min-h-screen">
+      <Header />
+      
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2043716e4cb7f38145f40fd52ae459059be32471?placeholderIfAbsent=true"
+        alt="Hero banner"
+        className="aspect-[6.21] object-contain w-full pt-[60px] max-md:max-w-full"
+      />
+      
+      <main className="px-[150px] py-[60px] max-md:px-5">
+        <SearchBar
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search"
         />
         
-        <main className="w-full px-[150px] py-[60px] max-md:max-w-full max-md:px-5">
-          <SearchBar
-            value={searchQuery}
-            onChange={setSearchQuery}
-            placeholder="Search"
-          />
+        <div className="flex gap-6 mt-6 max-md:flex-col">
+          <FilterSidebar onFilterChange={handleFilterChange} />
           
-          <div className="flex min-h-[774px] w-full gap-6 flex-wrap mt-6 max-md:max-w-full">
-            <FilterSidebar onFilterChange={handleFilterChange} />
+          <div className="flex-1">
+            <SortControls
+              itemCount={filteredAndSortedUseCases.length}
+              currentSort={currentSort}
+              onSortChange={setCurrentSort}
+            />
             
-            <section className="flex min-w-60 flex-col items-stretch justify-center grow shrink w-[796px] max-md:max-w-full">
-              <div className="w-full max-md:max-w-full">
-                <SortControls
-                  itemCount={filteredAndSortedUseCases.length}
-                  currentSort={currentSort}
-                  onSortChange={setCurrentSort}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
+              {filteredAndSortedUseCases.map((useCase) => (
+                <UseCaseCard
+                  key={useCase.id}
+                  title={useCase.title}
+                  badges={useCase.badges}
+                  description={useCase.description}
+                  integrations={useCase.integrations}
                 />
-                
-                <div className="flex h-[728px] w-full gap-6 overflow-hidden flex-wrap mt-5 max-md:max-w-full">
-                  {filteredAndSortedUseCases.map((useCase) => (
-                    <UseCaseCard
-                      key={useCase.id}
-                      title={useCase.title}
-                      badges={useCase.badges}
-                      description={useCase.description}
-                      integrations={useCase.integrations}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
+              ))}
+            </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 };
