@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface Badge {
   text: string;
@@ -25,7 +27,9 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   description,
   integrations,
 }) => {
-  return (
+  const isTicketViewingTracking = title === "Ticket Viewing & Tracking";
+  
+  const cardContent = (
     <article className="border border-[color:var(--base-border,#E4E4E7)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] min-w-60 grow shrink w-[330px] gap-4 bg-white px-[20px] py-[24px] rounded-lg border-solid hover:shadow-md transition-shadow">
       <header className="items-stretch flex w-full gap-3 font-semibold">
         <div className="items-stretch flex min-w-60 w-full flex-col flex-1 shrink basis-[0%] gap-1">
@@ -73,4 +77,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
       </div>
     </article>
   );
+
+  if (isTicketViewingTracking) {
+    return (
+      <Link to="/ticket-viewing-tracking" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return cardContent;
 };
