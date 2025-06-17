@@ -48,8 +48,8 @@ const Index: React.FC = () => {
                 <UseCaseCard
                   key={useCase.id}
                   title={useCase.title}
+                  badges={useCase.badges}
                   description={useCase.description}
-                  domain={useCase.domain}
                   integrations={useCase.integrations}
                 />
               ))}
