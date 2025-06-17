@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { useCases } from '@/data/useCases';
 
 interface FilterOption {
   id: string;
@@ -11,7 +12,6 @@ interface FilterSection {
   title: string;
   searchPlaceholder: string;
   options: FilterOption[];
-  moreCount?: number;
 }
 
 interface FilterSidebarProps {
@@ -20,85 +20,53 @@ interface FilterSidebarProps {
 
 export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) => {
   const [searchValues, setSearchValues] = useState<Record<string, string>>({
-    System: '',
-    Solutions: '',
+    Domain: '',
+    Integrations: '',
   });
 
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    System: true,
-    Solutions: true,
-    Type: true,
+    Domain: true,
+    Integrations: true,
   });
 
-  const filterSections: FilterSection[] = [
-    {
-      title: 'System',
-      searchPlaceholder: 'Search',
-      options: [
-        { id: 'all', label: 'All', checked: true },
-        { id: 'servicenow', label: 'ServiceNow', checked: false },
-        { id: 'bmc-remedy', label: 'BMC Remedy', checked: false },
-        { id: 'microsoft-teams', label: 'Microsoft Teams', checked: false },
-        { id: 'jira', label: 'Jira', checked: false },
-        { id: 'microsoft-power-automate', label: 'Microsoft Power Automate', checked: false },
-        { id: 'okta', label: 'Okta', checked: false },
-        { id: 'azure-ad', label: 'Azure AD', checked: false },
-        { id: 'ping-identity', label: 'Ping Identity', checked: false },
-        { id: 'duo-security', label: 'Duo Security', checked: false },
-        { id: 'freshservice', label: 'Freshservice', checked: false },
-        { id: 'teamviewer', label: 'TeamViewer', checked: false },
-        { id: 'anydesk', label: 'AnyDesk', checked: false },
-        { id: 'slack', label: 'Slack', checked: false },
-        { id: 'hp-web-jetadmin', label: 'HP Web Jetadmin', checked: false },
-        { id: 'xerox-freeflow', label: 'Xerox FreeFlow', checked: false },
-        { id: 'konica-minolta', label: 'Konica Minolta', checked: false },
-        { id: 'vmware-workspace-one', label: 'VMware Workspace ONE', checked: false },
-        { id: 'microsoft-intune', label: 'Microsoft Intune', checked: false },
-        { id: 'mobileiron', label: 'MobileIron', checked: false },
-        { id: 'cisco-anyconnect', label: 'Cisco AnyConnect', checked: false },
-        { id: 'palo-alto-globalprotect', label: 'Palo Alto GlobalProtect', checked: false },
-        { id: 'openvpn', label: 'OpenVPN', checked: false },
-        { id: 'cisco-meraki', label: 'Cisco Meraki', checked: false },
-        { id: 'palo-alto-networks', label: 'Palo Alto Networks', checked: false },
-        { id: 'onedrive', label: 'OneDrive', checked: false },
-        { id: 'google-drive', label: 'Google Drive', checked: false },
-        { id: 'dropbox', label: 'Dropbox', checked: false },
-        { id: 'gmail', label: 'Gmail', checked: false },
-        { id: 'microsoft-365', label: 'Microsoft 365', checked: false },
-        { id: 'outlook', label: 'Outlook', checked: false },
-        { id: 'zoom', label: 'Zoom', checked: false },
-        { id: 'google-meet', label: 'Google Meet', checked: false },
-        { id: 'sharepoint', label: 'SharePoint', checked: false },
-        { id: 'google-docs', label: 'Google Docs', checked: false },
-        { id: 'adobe-sign', label: 'Adobe Sign', checked: false },
-        { id: 'microsoft-exchange', label: 'Microsoft Exchange', checked: false },
-        { id: 'google-workspace', label: 'Google Workspace', checked: false },
-        { id: 'crowdstrike', label: 'CrowdStrike', checked: false },
-        { id: 'sentinelone', label: 'SentinelOne', checked: false },
-        { id: 'microsoft-defender', label: 'Microsoft Defender', checked: false },
-      ],
-      moreCount: 0,
-    },
-    {
-      title: 'Solutions',
-      searchPlaceholder: 'Search',
-      options: [
-        { id: 'all', label: 'All', checked: true },
-        { id: 'it', label: 'IT', checked: false },
-        { id: 'ai-itsm', label: 'AI for ITSM', checked: false },
-        { id: 'ai-service-desk', label: 'AI Service Desk', checked: false },
-      ],
-      moreCount: 0,
-    },
-  ];
+  // Generate dynamic filter options from use cases data
+  const filterSections: FilterSection[] = useMemo(() => {
+    // Get unique domains
+    const domains = Array.from(new Set(useCases.map(useCase => useCase.domain))).sort();
+    
+    // Get unique integrations (split by comma and flatten)
+    const allIntegrations = useCases.flatMap(useCase => 
+      useCase.integrations.split(',').map(integration => integration.trim())
+    );
+    const uniqueIntegrations = Array.from(new Set(allIntegrations)).sort();
 
-  const typeOptions: FilterOption[] = [
-    { id: 'all', label: 'All', checked: true },
-    { id: 'ai-itsm-type', label: 'AI for ITSM', checked: false },
-    { id: 'built-in', label: 'Built in', checked: false },
-    { id: 'guide', label: 'Guide', checked: false },
-    { id: 'installable', label: 'Installable', checked: false },
-  ];
+    return [
+      {
+        title: 'Domain',
+        searchPlaceholder: 'Search domains',
+        options: [
+          { id: 'all', label: 'All', checked: true },
+          ...domains.map(domain => ({ 
+            id: domain.toLowerCase(), 
+            label: domain, 
+            checked: false 
+          }))
+        ]
+      },
+      {
+        title: 'Integrations',
+        searchPlaceholder: 'Search integrations',
+        options: [
+          { id: 'all', label: 'All', checked: true },
+          ...uniqueIntegrations.slice(0, 20).map(integration => ({ 
+            id: integration.toLowerCase().replace(/\s+/g, '-'), 
+            label: integration, 
+            checked: false 
+          }))
+        ]
+      }
+    ];
+  }, []);
 
   const toggleSection = (sectionTitle: string) => {
     setExpandedSections(prev => ({
@@ -151,8 +119,12 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) 
             />
           </div>
           
-          <div className="w-full text-xs text-black font-light leading-loose mt-3">
-            {section.options.map((option) => (
+          <div className="w-full text-xs text-black font-light leading-loose mt-3 max-h-60 overflow-y-auto">
+            {section.options
+              .filter(option => 
+                option.label.toLowerCase().includes((searchValues[section.title] || '').toLowerCase())
+              )
+              .map((option) => (
               <label key={option.id} className="flex w-full items-center gap-2 whitespace-nowrap mt-2 cursor-pointer hover:bg-gray-50 transition-colors">
                 <input
                   type="checkbox"
@@ -168,11 +140,6 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) 
                 <span className="self-stretch my-auto">{option.label}</span>
               </label>
             ))}
-            {section.moreCount && (
-              <button className="text-[#B940FA] font-bold mt-2 hover:underline">
-                + {section.moreCount} more
-              </button>
-            )}
           </div>
         </div>
       )}
@@ -182,46 +149,6 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) 
   return (
     <aside className="rounded border border-[color:var(--base-border,#E4E4E7)] min-w-60 grow shrink w-[214px] p-4 border-solid">
       {filterSections.map(renderFilterSection)}
-      
-      <div className="w-full text-black mt-4">
-        <button
-          onClick={() => toggleSection('Type')}
-          className="flex w-full items-center gap-[40px_100px] text-sm font-normal whitespace-nowrap leading-loose justify-between hover:bg-gray-50 transition-colors"
-        >
-          <span className="self-stretch my-auto">Type</span>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/45fd1c2a634f3477d157d435ba05688ffe036c42?placeholderIfAbsent=true"
-            alt="Toggle icon"
-            className={`aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto transition-transform ${
-              expandedSections.Type ? 'rotate-180' : ''
-            }`}
-          />
-        </button>
-        
-        {expandedSections.Type && (
-          <div className="w-full text-xs font-light leading-loose mt-4">
-            <div className="w-full">
-              {typeOptions.map((option) => (
-                <label key={option.id} className="flex w-full items-center gap-2 whitespace-nowrap mt-2 cursor-pointer hover:bg-gray-50 transition-colors">
-                  <input
-                    type="radio"
-                    name="type"
-                    checked={option.checked}
-                    onChange={(e) => handleOptionChange('Type', option.id, e.target.checked)}
-                    className="sr-only"
-                  />
-                  <img
-                    src={option.checked ? "https://cdn.builder.io/api/v1/image/assets/TEMP/b8842c275bb8bad627576b9a08b25a97896689b7?placeholderIfAbsent=true" : "https://cdn.builder.io/api/v1/image/assets/TEMP/615b5e7f8c6b3a214beb4ae05b8a1e5db7995edd?placeholderIfAbsent=true"}
-                    alt="Radio button"
-                    className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-                  />
-                  <span className="self-stretch my-auto">{option.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
     </aside>
   );
 };
