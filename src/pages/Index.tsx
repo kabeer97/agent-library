@@ -32,7 +32,7 @@ const Index: React.FC = () => {
         />
         
         <div className="flex gap-6 mt-6 max-md:flex-col">
-          <div className="w-1/4 max-md:w-full">
+          <div className="hidden lg:block w-1/4">
             <FilterSidebar onFilterChange={handleFilterChange} />
           </div>
           
