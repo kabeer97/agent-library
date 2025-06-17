@@ -24,7 +24,7 @@ const Index: React.FC = () => {
       <Header />
       <Banner />
       
-      <main className="px-[150px] py-12 max-md:px-5">
+      <main className="max-w-[1440px] mx-auto px-5 py-12">
         <SearchBar
           value={searchQuery}
           onChange={setSearchQuery}
