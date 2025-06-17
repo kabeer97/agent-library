@@ -1,3 +1,4 @@
+
 import { UseCase } from '@/types/useCase';
 
 export const useCases: UseCase[] = [
@@ -235,7 +236,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '30',
-    title: 'Retierement Plans',
+    title: 'Retirement Plans',
     description: 'Provide employees with real-time access to their retirement plan details, including 401(k) or pension balances, contribution rates, employer match info, and investment options. The AI can answer questions about eligibility, vesting schedules, or rollover processes, and offer educational resources to help employees optimize their retirement planning strategy.',
     domain: 'HR',
     integrations: 'Workday, ADP, Fidelity, Vanguard, Empower, Principal, SAP SuccessFactors',
@@ -259,7 +260,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '33',
-3. title: 'Direct Deposit Notifications',
+    title: 'Direct Deposit Notifications',
     description: 'Automatically notify employees of changes or issues related to their direct deposit setup. The AI verifies bank account details, confirms transaction success, and flags any discrepancies or delays. It also guides users through the secure process of updating their banking information in HR systems, ensuring paychecks are delivered accurately and on time.',
     domain: 'HR',
     integrations: 'ADP, Workday, SAP SuccessFactors, Oracle HCM, UKG, Plaid, Slack, Microsoft Teams',
@@ -340,7 +341,7 @@ export const useCases: UseCase[] = [
   {
     id: '43',
     title: 'Target Account Research',
-    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account's current landscape, pain points, and buying signals—saving hours of manual research.',
+    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account\'s current landscape, pain points, and buying signals—saving hours of manual research.',
     domain: 'Sales',
     integrations: 'LinkedIn Sales Navigator, ZoomInfo, Clearbit, Crunchbase, Owler, Similarweb, 6sense',
     keyBenefits: '1. Deep Account Context: Informed conversations.\n2. Automated Research: Saves rep time.\n3. Real-Time Updates: Fresh insights always.\n4. Sales Strategy Alignment: Improves targeting precision.'
@@ -348,7 +349,7 @@ export const useCases: UseCase[] = [
   {
     id: '44',
     title: 'Prep new use Case for prospects',
-    description: 'Analyzes industry trends, prospect pain points, and historical customer success data to recommend relevant use cases. It generates clear narratives that connect the prospect's challenges to proven solutions, helping reps present tailored, compelling value propositions during outreach and meetings.',
+    description: 'Analyzes industry trends, prospect pain points, and historical customer success data to recommend relevant use cases. It generates clear narratives that connect the prospect\'s challenges to proven solutions, helping reps present tailored, compelling value propositions during outreach and meetings.',
     domain: 'Sales',
     integrations: 'Salesforce, Notion, Highspot, Seismic, Productboard, Confluence, Slack',
     keyBenefits: '1. Custom Fit: Aligns use cases to prospect needs.\n2. Educates Prospects: Clarifies product value.\n3. Speeds up Conversations: Reduces selling cycle.\n4. Boosts Win Rate: Better buyer alignment.'
@@ -372,7 +373,7 @@ export const useCases: UseCase[] = [
   {
     id: '47',
     title: 'Outline Workshop agenda for Sales',
-    description: 'Creates customized workshop agendas based on the prospect's business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
+    description: 'Creates customized workshop agendas based on the prospect\'s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
     domain: 'Sales',
     integrations: 'Salesforce, Google Docs, Notion, Confluence, Microsoft Word, Miro, Figma',
     keyBenefits: '1. Professional Format: Clean, ready-to-send agenda.\n2. Tailored Content: Reflects customer goals.\n3. Facilitates Buy-In: Sets clear expectations.\n4. Streamlines Planning: Reduces prep time.'
