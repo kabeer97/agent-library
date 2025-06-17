@@ -8,7 +8,7 @@ export const useCases: UseCase[] = [
     badges: [{ text: 'IT' }],
     description: 'Allows users to view the status of their submitted tickets and track progress in real-time across channels. The system provides updates on ticket assignment, resolution stages, and expected timelines, enabling better visibility and reducing the need for follow-ups.',
     integrations: [
-      { src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/servicenow-logo', alt: 'ServiceNow', type: 'placeholder', backgroundColor: 'rgba(0,120,176,0.1)' },
+      { src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/servicenow-logo', alt: 'ServiceNow', type: 'image', backgroundColor: 'rgba(0,120,176,0.1)' },
       { src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/bmc-remedy-logo', alt: 'BMC Remedy', type: 'placeholder', backgroundColor: 'rgba(255,102,0,0.1)' },
       { src: 'https://cdn.builder.io/api/v1/image/assets/TEMP/microsoft-teams-logo', alt: 'Microsoft Teams', type: 'placeholder', backgroundColor: 'rgba(98,100,167,0.1)' },
     ],
