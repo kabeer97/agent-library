@@ -30,7 +30,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   const isTicketViewingTracking = title === "Ticket Viewing & Tracking";
   
   const cardContent = (
-    <article className="border border-[color:var(--base-border,#E4E4E7)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] min-w-60 grow shrink w-[330px] gap-4 bg-white px-[20px] py-[24px] rounded-lg border-solid hover:shadow-md transition-shadow">
+    <article className="w-full rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md">
       <header className="items-stretch flex w-full gap-3 font-semibold">
         <div className="items-stretch flex min-w-60 w-full flex-col flex-1 shrink basis-[0%] gap-1">
           <h3 className="text-zinc-950 text-ellipsis text-base">
