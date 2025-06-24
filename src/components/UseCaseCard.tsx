@@ -24,10 +24,10 @@ interface UseCaseCardProps {
 // Logo mapping based on integration names
 const getLogoForIntegration = (name: string): string => {
   const logoMap: { [key: string]: string } = {
-    'ServiceNow': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
+    'ServiceNow': '/lovable-uploads/f2625fbc-396c-4794-8436-9376a81bd964.png',
     'BMC Remedy': '/lovable-uploads/b91edffb-d4d0-4955-b0d4-b96e4b754a34.png',
     'Microsoft Teams': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
-    'ServiceNow Flow Designer': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
+    'ServiceNow Flow Designer': '/lovable-uploads/f2625fbc-396c-4794-8436-9376a81bd964.png',
     'Jira': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
     'Microsoft Power Automate': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
     'Okta': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
@@ -47,7 +47,7 @@ const getLogoForIntegration = (name: string): string => {
     'Cisco AnyConnect': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
     'Palo Alto GlobalProtect': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
     'OpenVPN': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
-    'Workday': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'Workday': '/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png',
     'SAP': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
     'BambooHR': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
     'Micrsosoft Teams': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
