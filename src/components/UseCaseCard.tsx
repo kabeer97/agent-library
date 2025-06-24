@@ -21,6 +21,62 @@ interface UseCaseCardProps {
   integrations: Integration[];
 }
 
+// Logo mapping based on integration names
+const getLogoForIntegration = (name: string): string => {
+  const logoMap: { [key: string]: string } = {
+    'ServiceNow': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
+    'BMC Remedy': '/lovable-uploads/b91edffb-d4d0-4955-b0d4-b96e4b754a34.png',
+    'Microsoft Teams': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'ServiceNow Flow Designer': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
+    'Jira': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Microsoft Power Automate': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'Okta': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Azure AD': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Ping Identity': '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png',
+    'Duo Security': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'Freshservice': '/lovable-uploads/341a9f46-4424-4c86-a117-c52988b33601.png',
+    'TeamViewer': '/lovable-uploads/21966555-59e5-4639-bed4-e4f5fe616f98.png',
+    'AnyDesk': '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png',
+    'Slack': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'HP Web Jetadmin': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Xerox FreeFlow': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'Konica Minolta': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'VMware Workspace ONE': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'Microsoft Intune': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'MobileIron': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'Cisco AnyConnect': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'Palo Alto GlobalProtect': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'OpenVPN': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Workday': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'SAP': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'BambooHR': '/lovable-uploads/67867f6a-ae90-439e-9fb1-15d7d04ac983.png',
+    'Micrsosoft Teams': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Greenhouse': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'SmartRecruiters': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'Nectar': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'ADP': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Salesforce': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'Hubspot': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'Gainsight': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'Zoom': '/lovable-uploads/a8235edc-e67f-4f5c-9e1e-f5d3f19da6cd.png',
+    'Notion': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'Confluence': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'LinkedIn Sales': '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png',
+    'Navigator': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Clearbit': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Zendesk': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Oracle': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
+    'Netsuite': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
+    'Workday Learning': '/lovable-uploads/d71b2187-e3ea-4e61-8a14-566940d81c40.png',
+    'SAP Litmos': '/lovable-uploads/82ff5ef2-e153-4ae7-94d9-7e648d3567f9.png',
+    'Google Docs': '/lovable-uploads/1e908db4-74f8-4cec-a355-930eed739339.png',
+    'Microsoft Word': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Swift': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+  };
+  
+  return logoMap[name] || '/placeholder.svg';
+};
+
 export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   title,
   badges,
@@ -58,12 +114,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
       
       <div className="flex flex-wrap gap-2 mt-4">
         {integrations.map((integration, index) => (
-          <span
-            key={index}
-            className="text-xs bg-zinc-100 text-zinc-700 px-2 py-1 rounded-md font-medium"
-          >
-            {integration.alt}
-          </span>
+          <div key={index} className="w-8 h-8">
+            <img
+              src={getLogoForIntegration(integration.alt)}
+              alt={integration.alt}
+              className="aspect-[1] object-contain w-8 h-8 shrink-0"
+              title={integration.alt}
+            />
+          </div>
         ))}
       </div>
     </article>
