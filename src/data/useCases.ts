@@ -192,7 +192,7 @@ export const useCases: UseCase[] = [
     integrations: [
       { src: '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png', alt: 'Workday', type: 'image' },
       { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'SAP', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Micrsosoft Teams', type: 'image' },
+      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Microsoft Teams', type: 'image' },
     ],
     category: ['HR'],
     type: 'Guide',
@@ -225,7 +225,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '18',
-    title: 'Employee Informarion Change',
+    title: 'Employee Information Change',
     badges: [{ text: 'HR' }],
     description: 'Agentic AI enables employees to easily update their contact details, such as phone numbers or personal email addresses, through a guided, error-proof process. Changes are automatically synced across HR systems to maintain data accuracy, reduce administrative overhead, and ensure reliable communication channels.',
     integrations: [
@@ -262,7 +262,6 @@ export const useCases: UseCase[] = [
     category: ['Sales'],
     type: 'Installable',
   },
-  // New use cases with the additional logos
   {
     id: '21',
     title: 'Recap Customer Meetings',
@@ -280,7 +279,7 @@ export const useCases: UseCase[] = [
     id: '22',
     title: 'Outline Workshop Agenda for Sales',
     badges: [{ text: 'Sales' }],
-    description: 'Agentic AI can help you create customized workshop agendas based on the prospect’s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
+    description: 'Agentic AI can help you create customized workshop agendas based on the prospect\'s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
     integrations: [
       { src: '/lovable-uploads/b66ee5ba-48ca-430d-b1ad-6d03c22683af.png', alt: 'Salesforce', type: 'image' },
       { src: '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png', alt: 'Notion', type: 'image' },
@@ -293,10 +292,10 @@ export const useCases: UseCase[] = [
     id: '23',
     title: 'Target Account Research',
     badges: [{ text: 'Sales' }],
-    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account’s current landscape, pain points, and buying signals—saving hours of manual research.',
+    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account\'s current landscape, pain points, and buying signals—saving hours of manual research.',
     integrations: [
-      { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'LinkedIn Sales', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Navigator', type: 'image' },
+      { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'LinkedIn Sales Navigator', type: 'image' },
+      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'ZoomInfo', type: 'image' },
       { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'Clearbit', type: 'image' },
     ],
     category: ['Sales'],
@@ -317,7 +316,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '25',
-    title: 'Align Documents to new accounting standards',
+    title: 'Align Documents to New Accounting Standards',
     badges: [{ text: 'Finance' }],
     description: 'Aisera can help review financial documents for outdated practices, recommends adjustments, and helps update content in line with new accounting standards. This agent helps ensure compliance with evolving regulations and best practices.',
     integrations: [
@@ -332,7 +331,7 @@ export const useCases: UseCase[] = [
     id: '26',
     title: 'Train New Employees on Finance Processes',
     badges: [{ text: 'Finance' }],
-    description: 'This agent personalizes onboarding by guiding new finance employees through processes, policies, and tools using contextual, role-specific training modules. Effectively manages finance employee's time to reduce ramp-up time and ensure compliance from day one.',
+    description: 'This agent personalizes onboarding by guiding new finance employees through processes, policies, and tools using contextual, role-specific training modules. Effectively manages finance employee\'s time to reduce ramp-up time and ensure compliance from day one.',
     integrations: [
       { src: '/lovable-uploads/d71b2187-e3ea-4e61-8a14-566940d81c40.png', alt: 'Workday Learning', type: 'image' },
       { src: '/lovable-uploads/a813c8e2-4014-4669-9618-83b79e4087c8.png', alt: 'Confluence', type: 'image' },
@@ -343,26 +342,13 @@ export const useCases: UseCase[] = [
   },
   {
     id: '27',
-    title: 'Align Documents to New Accounting Standards',
-    badges: [{ text: 'Finance' }],
-    description: 'This agent reviews financial documents for outdated practices, recommends adjustments, and helps update content in line with new accounting standards. This agent helps ensure compliance with evolving regulations and best practices.',
-    integrations: [
-      { src: '/lovable-uploads/1c784daf-b749-4b02-9562-af32ee593c07.png', alt: 'SAP', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Oracle Netsuite', type: 'image' },
-      { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'Workiva', type: 'image' },
-    ],
-    category: ['Finance'],
-    type: 'Built in',
-  },
-  {
-    id: '28',
     title: 'Create a Meeting Agenda for Contract Review',
     badges: [{ text: 'Finance' }],
-    description: 'Agentic AI can help you generate tailored agendas for financial contract review meetings by analyzing the contract scope, risks, and outstanding issues, thus ensuring stakeholder alignment and focused discussions to expedite decisions. ',
+    description: 'Agentic AI can help you generate tailored agendas for financial contract review meetings by analyzing the contract scope, risks, and outstanding issues, thus ensuring stakeholder alignment and focused discussions to expedite decisions.',
     integrations: [
       { src: '/lovable-uploads/1e908db4-74f8-4cec-a355-930eed739339.png', alt: 'Google Docs', type: 'image' },
       { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Microsoft Word', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Confluence', type: 'image' },
+      { src: '/lovable-uploads/a813c8e2-4014-4669-9618-83b79e4087c8.png', alt: 'Confluence', type: 'image' },
     ],
     category: ['Finance'],
     type: 'Installable',
