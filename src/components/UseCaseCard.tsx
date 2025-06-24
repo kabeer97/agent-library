@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -28,7 +29,7 @@ const getLogoForIntegration = (name: string): string => {
     'Microsoft Teams': '/lovable-uploads/6b8589bb-d8c9-41bd-b025-511c87936068.png',
     'ServiceNow Flow Designer': '/lovable-uploads/f2625fbc-396c-4794-8436-9376a81bd964.png',
     'Jira': '/lovable-uploads/7ce6c2aa-6ed2-455e-889c-ec14fcc045f7.png',
-    'Microsoft Power Automate': '/lovable-uploads/6cfd2435-d537-487a-adc2-e79e99f4c721.png',
+    'Microsoft Power Automate': '/lovable-uploads/mspower.jpeg',
     'Okta': '/lovable-uploads/ddba73c4-73cf-4482-8fd8-7c9f156958d9.png',
     'Azure AD': '/lovable-uploads/086560d8-4621-4c4f-8209-6b317aec69d3.png',
     'Ping Identity': '/lovable-uploads/98eaf598-5126-400c-a2eb-75a2566595c2.png',
@@ -165,7 +166,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  if (title === "Password Reset") {
+  if (title === "Password Management" || title === "Password Reset") {
     return (
       <Link to="/password-reset" className="block">
         {cardContent}
@@ -181,7 +182,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  if (title === "Software Access & Availability") {
+  if (title === "Software Access & Licensing" || title === "Software Access & Availability") {
     return (
       <Link to="/software-access-availability" className="block">
         {cardContent}
