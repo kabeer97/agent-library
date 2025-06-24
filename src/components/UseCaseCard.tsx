@@ -69,7 +69,7 @@ const getLogoForIntegration = (name: string): string => {
     'Workday Learning': '/lovable-uploads/f566b1fa-5077-4a28-96be-f9cc8dc68407.png',
     'SAP Litmos': '/lovable-uploads/d7768d99-ecb8-4a52-8fde-8b119a315d6a.png',
     'Google Docs': '/lovable-uploads/490db752-4fa4-4593-9bbf-5ac001c5550d.png',
-    'Microsoft Word': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Microsoft Word': '/lovable-uploads/9ed3acf3-aa1d-4bb4-b53d-b67744699ee5.png',
     'Swift': '/lovable-uploads/f01557f7-d315-4a75-9046-c9bbf395c5bc.png',
   };
   
