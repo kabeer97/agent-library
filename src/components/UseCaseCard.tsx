@@ -134,5 +134,12 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  return cardContent;
+  // For all other use cases, create a slug from the title and link to the dynamic route
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  
+  return (
+    <Link to={`/use-case/${slug}`} className="block">
+      {cardContent}
+    </Link>
+  );
 };
