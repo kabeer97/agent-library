@@ -69,7 +69,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '6',
-    title: 'Password Reset',
+    title: 'Password Management',
     badges: [{ text: 'IT' }],
     description: 'Automates password reset processes, reducing help desk load and enabling users to quickly regain access to their accounts through secure, self-service workflows.',
     integrations: [
@@ -95,7 +95,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '8',
-    title: 'Software Access & Availability',
+    title: 'Software Access & Licensing',
     badges: [{ text: 'IT' }],
     description: 'Automates the process of requesting, reviewing, and approving software access, ensuring compliance and governance. This ensures efficient software distribution, reduces IT overhead, and improves user productivity.',
     integrations: [
