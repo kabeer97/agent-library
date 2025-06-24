@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -27,16 +28,16 @@ const getLogoForIntegration = (name: string): string => {
     'BMC Remedy': '/lovable-uploads/590f0671-6bcb-48a7-9794-d05d02ee566c.png',
     'Microsoft Teams': '/lovable-uploads/6b8589bb-d8c9-41bd-b025-511c87936068.png',
     'ServiceNow Flow Designer': '/lovable-uploads/f2625fbc-396c-4794-8436-9376a81bd964.png',
-    'Jira': '/lovable-uploads/ddba73c4-73cf-4482-8fd8-7c9f156958d9.png',
+    'Jira': '/lovable-uploads/b41cfdb7-c30a-4a1f-bf7b-1d57a70c2657.png',
     'Microsoft Power Automate': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
     'Okta': '/lovable-uploads/ddba73c4-73cf-4482-8fd8-7c9f156958d9.png',
-    'Azure AD': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
-    'Ping Identity': '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png',
-    'Duo Security': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
-    'Freshservice': '/lovable-uploads/341a9f46-4424-4c86-a117-c52988b33601.png',
+    'Azure AD': '/lovable-uploads/086560d8-4621-4c4f-8209-6b317aec69d3.png',
+    'Ping Identity': '/lovable-uploads/98eaf598-5126-400c-a2eb-75a2566595c2.png',
+    'Duo Security': '/lovable-uploads/f7e740be-28ce-4bb8-9f9e-6393d0f2f110.png',
+    'Freshservice': '/lovable-uploads/b90419d5-3a78-4d6d-8ee8-2a8ff40134bd.png',
     'TeamViewer': '/lovable-uploads/21966555-59e5-4639-bed4-e4f5fe616f98.png',
     'AnyDesk': '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png',
-    'Slack': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
+    'Slack': '/lovable-uploads/656ff27c-1b17-4471-9f95-5645ce501942.png',
     'HP Web Jetadmin': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
     'Xerox FreeFlow': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
     'Konica Minolta': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
