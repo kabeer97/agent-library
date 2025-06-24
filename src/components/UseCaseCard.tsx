@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -69,9 +68,9 @@ const getLogoForIntegration = (name: string): string => {
     'Netsuite': '/lovable-uploads/876922f4-97c4-40c8-bdbc-3433b73f7c6f.png',
     'Workday Learning': '/lovable-uploads/f566b1fa-5077-4a28-96be-f9cc8dc68407.png',
     'SAP Litmos': '/lovable-uploads/d7768d99-ecb8-4a52-8fde-8b119a315d6a.png',
-    'Google Docs': '/lovable-uploads/1e908db4-74f8-4cec-a355-930eed739339.png',
+    'Google Docs': '/lovable-uploads/490db752-4fa4-4593-9bbf-5ac001c5550d.png',
     'Microsoft Word': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
-    'Swift': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'Swift': '/lovable-uploads/f01557f7-d315-4a75-9046-c9bbf395c5bc.png',
   };
   
   return logoMap[name] || '/placeholder.svg';
