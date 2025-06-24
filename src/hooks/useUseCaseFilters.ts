@@ -60,7 +60,8 @@ export const useUseCaseFilters = (useCases: UseCase[]) => {
             const categoryLower = cat.toLowerCase();
             return (domainFilter.it && categoryLower === 'it') ||
                    (domainFilter.hr && categoryLower === 'hr') ||
-                   (domainFilter.sales && categoryLower === 'sales');
+                   (domainFilter.sales && categoryLower === 'sales') ||
+                   (domainFilter.finance && categoryLower === 'finance');
           });
           
           if (!matchesDomain) {

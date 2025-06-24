@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface FilterOption {
@@ -38,6 +37,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ filters, onFilterC
         { id: 'it', label: 'IT', checked: filters.Domain?.it || false },
         { id: 'hr', label: 'HR', checked: filters.Domain?.hr || false },
         { id: 'sales', label: 'Sales', checked: filters.Domain?.sales || false },
+        { id: 'finance', label: 'Finance', checked: filters.Domain?.finance || false },
       ],
     },
     {
