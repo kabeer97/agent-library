@@ -157,6 +157,38 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
+  if (title === "Login Troubleshooting") {
+    return (
+      <Link to="/login-troubleshooting" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Password Reset") {
+    return (
+      <Link to="/password-reset" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Multi-Factor Authentication") {
+    return (
+      <Link to="/multi-factor-authentication" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Software Access & Availability") {
+    return (
+      <Link to="/software-access-availability" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // For all other use cases, create a slug from the title and link to the dynamic route
   const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   
