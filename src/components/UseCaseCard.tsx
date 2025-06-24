@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -82,11 +83,6 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   description,
   integrations,
 }) => {
-  const isTicketViewingTracking = title === "Ticket Viewing & Tracking";
-  const isTicketInteractionUpdates = title === "Ticket Interaction & Updates";
-  const isTicketEscalationClosure = title === "Ticket Escalation & Closure";
-  const isApprovalManagement = title === "Approval Management";
-  
   const cardContent = (
     <article className="w-full rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md">
       <header className="items-stretch flex w-full gap-3 font-semibold">
@@ -129,7 +125,8 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     </article>
   );
 
-  if (isTicketViewingTracking) {
+  // Check for specific use case titles and route accordingly
+  if (title === "Ticket Viewing & Tracking") {
     return (
       <Link to="/ticket-viewing-tracking" className="block">
         {cardContent}
@@ -137,7 +134,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  if (isTicketInteractionUpdates) {
+  if (title === "Ticket Interaction & Updates") {
     return (
       <Link to="/ticket-interaction-updates" className="block">
         {cardContent}
@@ -145,7 +142,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  if (isTicketEscalationClosure) {
+  if (title === "Ticket Escalation & Closure") {
     return (
       <Link to="/ticket-escalation-closure" className="block">
         {cardContent}
@@ -153,7 +150,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  if (isApprovalManagement) {
+  if (title === "Approval Management") {
     return (
       <Link to="/approval-management" className="block">
         {cardContent}
