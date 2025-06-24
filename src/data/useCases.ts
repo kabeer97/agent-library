@@ -278,15 +278,15 @@ export const useCases: UseCase[] = [
   },
   {
     id: '22',
-    title: 'Chat Support Integration',
-    badges: [{ text: 'IT' }],
-    description: 'Integrates with various chat platforms to provide seamless communication channels for IT support and user assistance.',
+    title: 'Outline Workshop Agenda for Sales',
+    badges: [{ text: 'Sales' }],
+    description: 'Agentic AI can help you create customized workshop agendas based on the prospect’s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
     integrations: [
       { src: '/lovable-uploads/b66ee5ba-48ca-430d-b1ad-6d03c22683af.png', alt: 'Chat Support', type: 'image' },
       { src: '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png', alt: 'Slack', type: 'image' },
       { src: '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png', alt: 'Microsoft Teams', type: 'image' },
     ],
-    category: ['IT'],
+    category: ['Sales'],
     type: 'Installable',
   },
   {
