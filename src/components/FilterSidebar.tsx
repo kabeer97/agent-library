@@ -14,10 +14,11 @@ interface FilterSection {
 }
 
 interface FilterSidebarProps {
+  filters: Record<string, Record<string, boolean>>;
   onFilterChange: (sectionTitle: string, optionId: string, checked: boolean) => void;
 }
 
-export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) => {
+export const FilterSidebar: React.FC<FilterSidebarProps> = ({ filters, onFilterChange }) => {
   const [searchValues, setSearchValues] = useState<Record<string, string>>({
     Domain: '',
     Integrations: '',
@@ -28,41 +29,41 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) 
     Integrations: true,
   });
 
-  const filterSections: FilterSection[] = [
+  const getFilterSections = (): FilterSection[] => [
     {
       title: 'Domain',
       searchPlaceholder: 'Search domains',
       options: [
-        { id: 'all', label: 'All', checked: true },
-        { id: 'it', label: 'IT', checked: false },
-        { id: 'hr', label: 'HR', checked: false },
-        { id: 'sales', label: 'Sales', checked: false },
+        { id: 'all', label: 'All', checked: filters.Domain?.all || false },
+        { id: 'it', label: 'IT', checked: filters.Domain?.it || false },
+        { id: 'hr', label: 'HR', checked: filters.Domain?.hr || false },
+        { id: 'sales', label: 'Sales', checked: filters.Domain?.sales || false },
       ],
     },
     {
       title: 'Integrations',
       searchPlaceholder: 'Search integrations',
       options: [
-        { id: 'all', label: 'All', checked: true },
-        { id: 'servicenow', label: 'ServiceNow', checked: false },
-        { id: 'microsoft-teams', label: 'Microsoft Teams', checked: false },
-        { id: 'jira', label: 'Jira', checked: false },
-        { id: 'slack', label: 'Slack', checked: false },
-        { id: 'okta', label: 'Okta', checked: false },
-        { id: 'microsoft-365', label: 'Microsoft 365', checked: false },
-        { id: 'zoom', label: 'Zoom', checked: false },
-        { id: 'sharepoint', label: 'SharePoint', checked: false },
-        { id: 'outlook', label: 'Outlook', checked: false },
-        { id: 'adobe-sign', label: 'Adobe Sign', checked: false },
-        { id: 'google-workspace', label: 'Google Workspace', checked: false },
-        { id: 'microsoft-defender', label: 'Microsoft Defender', checked: false },
-        { id: 'crowdstrike', label: 'CrowdStrike', checked: false },
-        { id: 'vmware', label: 'VMware', checked: false },
-        { id: 'cisco', label: 'Cisco', checked: false },
-        { id: 'palo-alto', label: 'Palo Alto', checked: false },
-        { id: 'microsoft-intune', label: 'Microsoft Intune', checked: false },
-        { id: 'ping-identity', label: 'Ping Identity', checked: false },
-        { id: 'duo-security', label: 'Duo Security', checked: false },
+        { id: 'all', label: 'All', checked: filters.Integrations?.all || false },
+        { id: 'servicenow', label: 'ServiceNow', checked: filters.Integrations?.servicenow || false },
+        { id: 'microsoft-teams', label: 'Microsoft Teams', checked: filters.Integrations?.['microsoft-teams'] || false },
+        { id: 'jira', label: 'Jira', checked: filters.Integrations?.jira || false },
+        { id: 'slack', label: 'Slack', checked: filters.Integrations?.slack || false },
+        { id: 'okta', label: 'Okta', checked: filters.Integrations?.okta || false },
+        { id: 'microsoft-365', label: 'Microsoft 365', checked: filters.Integrations?.['microsoft-365'] || false },
+        { id: 'zoom', label: 'Zoom', checked: filters.Integrations?.zoom || false },
+        { id: 'sharepoint', label: 'SharePoint', checked: filters.Integrations?.sharepoint || false },
+        { id: 'outlook', label: 'Outlook', checked: filters.Integrations?.outlook || false },
+        { id: 'adobe-sign', label: 'Adobe Sign', checked: filters.Integrations?.['adobe-sign'] || false },
+        { id: 'google-workspace', label: 'Google Workspace', checked: filters.Integrations?.['google-workspace'] || false },
+        { id: 'microsoft-defender', label: 'Microsoft Defender', checked: filters.Integrations?.['microsoft-defender'] || false },
+        { id: 'crowdstrike', label: 'CrowdStrike', checked: filters.Integrations?.crowdstrike || false },
+        { id: 'vmware', label: 'VMware', checked: filters.Integrations?.vmware || false },
+        { id: 'cisco', label: 'Cisco', checked: filters.Integrations?.cisco || false },
+        { id: 'palo-alto', label: 'Palo Alto', checked: filters.Integrations?.['palo-alto'] || false },
+        { id: 'microsoft-intune', label: 'Microsoft Intune', checked: filters.Integrations?.['microsoft-intune'] || false },
+        { id: 'ping-identity', label: 'Ping Identity', checked: filters.Integrations?.['ping-identity'] || false },
+        { id: 'duo-security', label: 'Duo Security', checked: filters.Integrations?.['duo-security'] || false },
       ],
     },
   ];
@@ -156,7 +157,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ onFilterChange }) 
 
   return (
     <aside className="rounded border border-[color:var(--base-border,#E4E4E7)] min-w-60 grow shrink w-[214px] p-4 border-solid">
-      {filterSections.map(renderFilterSection)}
+      {getFilterSections().map(renderFilterSection)}
     </aside>
   );
 };

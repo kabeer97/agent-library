@@ -11,13 +11,35 @@ export const useUseCaseFilters = (useCases: UseCase[]) => {
   });
 
   const handleFilterChange = (sectionTitle: string, optionId: string, checked: boolean) => {
-    setFilters(prev => ({
-      ...prev,
-      [sectionTitle]: {
-        ...prev[sectionTitle],
-        [optionId]: checked,
-      },
-    }));
+    setFilters(prev => {
+      const newFilters = { ...prev };
+      
+      if (optionId === 'all') {
+        // If "All" is checked, uncheck all other options
+        if (checked) {
+          newFilters[sectionTitle] = { all: true };
+        } else {
+          newFilters[sectionTitle] = { all: false };
+        }
+      } else {
+        // If a specific option is checked, uncheck "All"
+        newFilters[sectionTitle] = {
+          ...prev[sectionTitle],
+          all: false,
+          [optionId]: checked,
+        };
+        
+        // If no specific options are checked, check "All"
+        const specificOptions = Object.keys(newFilters[sectionTitle]).filter(key => key !== 'all');
+        const hasAnyChecked = specificOptions.some(key => newFilters[sectionTitle][key]);
+        
+        if (!hasAnyChecked) {
+          newFilters[sectionTitle] = { all: true };
+        }
+      }
+      
+      return newFilters;
+    });
   };
 
   const filteredAndSortedUseCases = useMemo(() => {
@@ -30,36 +52,40 @@ export const useUseCaseFilters = (useCases: UseCase[]) => {
 
       // Domain filter
       const domainFilter = filters.Domain;
-      const hasSpecificDomainFilter = Object.keys(domainFilter).some(key => key !== 'all' && domainFilter[key]);
-      
-      if (hasSpecificDomainFilter) {
-        const matchesDomain = useCase.category.some(cat => {
-          const categoryLower = cat.toLowerCase();
-          return (domainFilter.it && categoryLower === 'it') ||
-                 (domainFilter.hr && categoryLower === 'hr') ||
-                 (domainFilter.sales && categoryLower === 'sales');
-        });
+      if (!domainFilter.all) {
+        const hasSpecificDomainFilter = Object.keys(domainFilter).some(key => key !== 'all' && domainFilter[key]);
         
-        if (!matchesDomain) {
-          return false;
+        if (hasSpecificDomainFilter) {
+          const matchesDomain = useCase.category.some(cat => {
+            const categoryLower = cat.toLowerCase();
+            return (domainFilter.it && categoryLower === 'it') ||
+                   (domainFilter.hr && categoryLower === 'hr') ||
+                   (domainFilter.sales && categoryLower === 'sales');
+          });
+          
+          if (!matchesDomain) {
+            return false;
+          }
         }
       }
 
       // Integrations filter
       const integrationsFilter = filters.Integrations;
-      const hasSpecificIntegrationFilter = Object.keys(integrationsFilter).some(key => key !== 'all' && integrationsFilter[key]);
-      
-      if (hasSpecificIntegrationFilter) {
-        const matchesIntegration = useCase.integrations.some(integration => {
-          const integrationName = integration.alt.toLowerCase();
-          return Object.keys(integrationsFilter).some(filterKey => {
-            if (filterKey === 'all') return false;
-            return integrationsFilter[filterKey] && integrationName.includes(filterKey.replace('-', ' '));
-          });
-        });
+      if (!integrationsFilter.all) {
+        const hasSpecificIntegrationFilter = Object.keys(integrationsFilter).some(key => key !== 'all' && integrationsFilter[key]);
         
-        if (!matchesIntegration) {
-          return false;
+        if (hasSpecificIntegrationFilter) {
+          const matchesIntegration = useCase.integrations.some(integration => {
+            const integrationName = integration.alt.toLowerCase();
+            return Object.keys(integrationsFilter).some(filterKey => {
+              if (filterKey === 'all') return false;
+              return integrationsFilter[filterKey] && integrationName.includes(filterKey.replace('-', ' '));
+            });
+          });
+          
+          if (!matchesIntegration) {
+            return false;
+          }
         }
       }
 

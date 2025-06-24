@@ -15,6 +15,7 @@ const Index: React.FC = () => {
     setSearchQuery,
     currentSort,
     setCurrentSort,
+    filters,
     handleFilterChange,
     filteredAndSortedUseCases,
   } = useUseCaseFilters(useCases);
@@ -33,7 +34,10 @@ const Index: React.FC = () => {
         
         <div className="flex gap-6 mt-6 max-md:flex-col">
           <div className="hidden lg:block w-1/4">
-            <FilterSidebar onFilterChange={handleFilterChange} />
+            <FilterSidebar 
+              filters={filters}
+              onFilterChange={handleFilterChange} 
+            />
           </div>
           
           <div className="w-3/4 max-md:w-full">
