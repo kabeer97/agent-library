@@ -192,7 +192,7 @@ export const useCases: UseCase[] = [
     integrations: [
       { src: '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png', alt: 'Workday', type: 'image' },
       { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'SAP', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Microsoft Teams', type: 'image' },
+      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Micrsosoft Teams', type: 'image' },
     ],
     category: ['HR'],
     type: 'Guide',
@@ -225,7 +225,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '18',
-    title: 'Employee Information Change',
+    title: 'Employee Informarion Change',
     badges: [{ text: 'HR' }],
     description: 'Agentic AI enables employees to easily update their contact details, such as phone numbers or personal email addresses, through a guided, error-proof process. Changes are automatically synced across HR systems to maintain data accuracy, reduce administrative overhead, and ensure reliable communication channels.',
     integrations: [
@@ -262,6 +262,7 @@ export const useCases: UseCase[] = [
     category: ['Sales'],
     type: 'Installable',
   },
+  // New use cases with the additional logos
   {
     id: '21',
     title: 'Recap Customer Meetings',
@@ -279,7 +280,7 @@ export const useCases: UseCase[] = [
     id: '22',
     title: 'Outline Workshop Agenda for Sales',
     badges: [{ text: 'Sales' }],
-    description: 'Agentic AI can help you create customized workshop agendas based on the prospect\'s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
+    description: 'Agentic AI can help you create customized workshop agendas based on the prospect’s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
     integrations: [
       { src: '/lovable-uploads/b66ee5ba-48ca-430d-b1ad-6d03c22683af.png', alt: 'Salesforce', type: 'image' },
       { src: '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png', alt: 'Notion', type: 'image' },
@@ -292,10 +293,10 @@ export const useCases: UseCase[] = [
     id: '23',
     title: 'Target Account Research',
     badges: [{ text: 'Sales' }],
-    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account\'s current landscape, pain points, and buying signals—saving hours of manual research.',
+    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account’s current landscape, pain points, and buying signals—saving hours of manual research.',
     integrations: [
-      { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'LinkedIn Sales Navigator', type: 'image' },
-      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'ZoomInfo', type: 'image' },
+      { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'LinkedIn Sales', type: 'image' },
+      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Navigator', type: 'image' },
       { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'Clearbit', type: 'image' },
     ],
     category: ['Sales'],
