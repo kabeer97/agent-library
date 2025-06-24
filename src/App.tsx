@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TicketViewingTracking from "./pages/TicketViewingTracking";
+import TicketInteractionUpdates from "./pages/TicketInteractionUpdates";
 import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ticket-viewing-tracking" element={<TicketViewingTracking />} />
+          <Route path="/ticket-interaction-updates" element={<TicketInteractionUpdates />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

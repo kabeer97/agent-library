@@ -83,6 +83,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   integrations,
 }) => {
   const isTicketViewingTracking = title === "Ticket Viewing & Tracking";
+  const isTicketInteractionUpdates = title === "Ticket Interaction & Updates";
   
   const cardContent = (
     <article className="w-full rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md">
@@ -129,6 +130,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   if (isTicketViewingTracking) {
     return (
       <Link to="/ticket-viewing-tracking" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (isTicketInteractionUpdates) {
+    return (
+      <Link to="/ticket-interaction-updates" className="block">
         {cardContent}
       </Link>
     );
