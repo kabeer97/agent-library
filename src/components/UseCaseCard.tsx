@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -35,16 +34,16 @@ const getLogoForIntegration = (name: string): string => {
     'Ping Identity': '/lovable-uploads/98eaf598-5126-400c-a2eb-75a2566595c2.png',
     'Duo Security': '/lovable-uploads/f7e740be-28ce-4bb8-9f9e-6393d0f2f110.png',
     'Freshservice': '/lovable-uploads/b90419d5-3a78-4d6d-8ee8-2a8ff40134bd.png',
-    'TeamViewer': '/lovable-uploads/21966555-59e5-4639-bed4-e4f5fe616f98.png',
-    'AnyDesk': '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png',
+    'TeamViewer': '/lovable-uploads/ad3a520a-652b-4599-9413-6e0c80b13571.png',
+    'AnyDesk': '/lovable-uploads/86980762-d3b6-4389-b225-4bf861674321.png',
     'Slack': '/lovable-uploads/656ff27c-1b17-4471-9f95-5645ce501942.png',
-    'HP Web Jetadmin': '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png',
+    'HP Web Jetadmin': '/lovable-uploads/11b21718-07cd-4b7f-b466-fbffaedd307f.png',
     'Xerox FreeFlow': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
     'Konica Minolta': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
     'VMware Workspace ONE': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
     'Microsoft Intune': '/lovable-uploads/0b06bfa6-b71b-4538-8dbc-3b4599c0c5d5.png',
     'MobileIron': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
-    'Cisco AnyConnect': '/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png',
+    'Cisco AnyConnect': '/lovable-uploads/f6aa47cc-9318-4185-99d4-763cf2e7f042.png',
     'Palo Alto GlobalProtect': '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png',
     'OpenVPN': '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png',
     'Workday': '/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png',
