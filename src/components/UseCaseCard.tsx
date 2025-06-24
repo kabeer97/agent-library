@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -182,6 +183,23 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   }
 
   if (title === "Software Access & Availability") {
+    return (
+      <Link to="/software-access-availability" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  // Check for alternative titles that might be in the data
+  if (title === "Password Management") {
+    return (
+      <Link to="/password-reset" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Software Access & Licensing") {
     return (
       <Link to="/software-access-availability" className="block">
         {cardContent}

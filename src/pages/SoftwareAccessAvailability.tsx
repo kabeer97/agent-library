@@ -12,7 +12,7 @@ const getLogoForIntegration = (name: string): string => {
     'Microsoft Teams': '/lovable-uploads/6b8589bb-d8c9-41bd-b025-511c87936068.png',
     'ServiceNow Flow Designer': '/lovable-uploads/f2625fbc-396c-4794-8436-9376a81bd964.png',
     'Jira': '/lovable-uploads/7ce6c2aa-6ed2-455e-889c-ec14fcc045f7.png',
-    'Microsoft Power Automate': '/lovable-uploads/mspower.jpeg',
+    'Microsoft Power Automate': '/lovable-uploads/6cfd2435-d537-487a-adc2-e79e99f4c721.png',
     'Okta': '/lovable-uploads/ddba73c4-73cf-4482-8fd8-7c9f156958d9.png',
     'Azure AD': '/lovable-uploads/086560d8-4621-4c4f-8209-6b317aec69d3.png',
     'Ping Identity': '/lovable-uploads/98eaf598-5126-400c-a2eb-75a2566595c2.png',
@@ -72,7 +72,7 @@ const SoftwareAccessAvailability: React.FC = () => {
         </nav>
 
         <div className="relative mb-8">
-          <div className="bg-gradient-to-r from-purple-100 to-purple-200 rounded-3xl p-8 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-orange-100 to-orange-200 rounded-3xl p-8 relative overflow-hidden">
             <div className="relative z-10">
               <h1 className="text-3xl font-bold text-gray-900 mb-3">
                 {useCase.title}
@@ -121,7 +121,7 @@ const SoftwareAccessAvailability: React.FC = () => {
                 
                 <div className="flex justify-between">
                   <span className="text-gray-600">Install Time:</span>
-                  <span className="font-medium">30 minutes</span>
+                  <span className="font-medium">25 minutes</span>
                 </div>
                 
                 <div className="flex justify-between">
