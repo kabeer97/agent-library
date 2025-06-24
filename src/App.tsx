@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TicketViewingTracking from "./pages/TicketViewingTracking";
 import TicketInteractionUpdates from "./pages/TicketInteractionUpdates";
+import TicketEscalationClosure from "./pages/TicketEscalationClosure";
+import ApprovalManagement from "./pages/ApprovalManagement";
 import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/ticket-viewing-tracking" element={<TicketViewingTracking />} />
           <Route path="/ticket-interaction-updates" element={<TicketInteractionUpdates />} />
+          <Route path="/ticket-escalation-closure" element={<TicketEscalationClosure />} />
+          <Route path="/approval-management" element={<ApprovalManagement />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -84,6 +84,8 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
 }) => {
   const isTicketViewingTracking = title === "Ticket Viewing & Tracking";
   const isTicketInteractionUpdates = title === "Ticket Interaction & Updates";
+  const isTicketEscalationClosure = title === "Ticket Escalation & Closure";
+  const isApprovalManagement = title === "Approval Management";
   
   const cardContent = (
     <article className="w-full rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md">
@@ -138,6 +140,22 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   if (isTicketInteractionUpdates) {
     return (
       <Link to="/ticket-interaction-updates" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (isTicketEscalationClosure) {
+    return (
+      <Link to="/ticket-escalation-closure" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (isApprovalManagement) {
+    return (
+      <Link to="/approval-management" className="block">
         {cardContent}
       </Link>
     );
