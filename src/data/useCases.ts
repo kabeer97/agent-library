@@ -291,15 +291,15 @@ export const useCases: UseCase[] = [
   },
   {
     id: '23',
-    title: 'API Integration Management',
-    badges: [{ text: 'IT' }],
-    description: 'Manages and troubleshoots API integrations, ensuring smooth data flow between systems and applications.',
+    title: 'Target Account Research',
+    badges: [{ text: 'Sales' }],
+    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account’s current landscape, pain points, and buying signals—saving hours of manual research.',
     integrations: [
       { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'API Integration', type: 'image' },
       { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Azure', type: 'image' },
       { src: '/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png', alt: 'Google Cloud', type: 'image' },
     ],
-    category: ['IT'],
+    category: ['Sales'],
     type: 'Guide',
   },
   {
