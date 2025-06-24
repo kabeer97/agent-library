@@ -354,4 +354,17 @@ export const useCases: UseCase[] = [
     category: ['Finance'],
     type: 'Installable',
   },
+  {
+    id: '28',
+    title: 'Letters of Credit for Corporate Banking',
+    badges: [{ text: 'Finance' }],
+    description: 'This agent helps finance teams initiate, manage, and monitor letters of credit by generating required documents, verifying compliance, and tracking approval workflows; streamlining trade finance operations for cross-border transactions.',
+    integrations: [
+      { src: '/lovable-uploads/1e908db4-74f8-4cec-a355-930eed739339.png', alt: 'SAP', type: 'image' },
+      { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Swift', type: 'image' },
+      { src: '/lovable-uploads/a813c8e2-4014-4669-9618-83b79e4087c8.png', alt: 'Oracle', type: 'image' },
+    ],
+    category: ['Finance'],
+    type: 'Installable',
+  },
 ];
