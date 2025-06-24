@@ -69,7 +69,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '6',
-    title: 'Password Management',
+    title: 'Password Reset',
     badges: [{ text: 'IT' }],
     description: 'Automates password reset processes, reducing help desk load and enabling users to quickly regain access to their accounts through secure, self-service workflows.',
     integrations: [
