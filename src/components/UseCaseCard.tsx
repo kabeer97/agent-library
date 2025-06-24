@@ -56,23 +56,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
         {description}
       </p>
       
-      <div className="flex w-full gap-2 mt-4">
+      <div className="flex flex-wrap gap-2 mt-4">
         {integrations.map((integration, index) => (
-          <div key={index} className="w-8">
-            {integration.type === 'placeholder' ? (
-              <div 
-                className="flex w-8 shrink-0 h-8 rounded-[5px]"
-                style={{ backgroundColor: integration.backgroundColor }}
-                title={integration.alt}
-              />
-            ) : (
-              <img
-                src={integration.src}
-                alt={integration.alt}
-                className="aspect-[1] object-contain w-8 shrink-0"
-              />
-            )}
-          </div>
+          <span
+            key={index}
+            className="text-xs bg-zinc-100 text-zinc-700 px-2 py-1 rounded-md font-medium"
+          >
+            {integration.alt}
+          </span>
         ))}
       </div>
     </article>
