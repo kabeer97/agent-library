@@ -273,6 +273,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
     );
   }
 
+  if (title === "Employee Information Change") {
+    return (
+      <Link to="/employee-information-change" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   if (title === "Password Management") {
     return (
       <Link to="/password-reset" className="block">
