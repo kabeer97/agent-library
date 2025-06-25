@@ -40,7 +40,11 @@ const getLogoForIntegration = (name: string): string => {
 };
 
 const SoftwareAccessAvailability: React.FC = () => {
-  const useCase = useCases.find(uc => uc.title === "Software Access & Availability");
+  // Try to find the use case with either title variant
+  const useCase = useCases.find(uc => 
+    uc.title === "Software Access & Availability" || 
+    uc.title === "Software Access & Licensing"
+  );
 
   if (!useCase) {
     return (

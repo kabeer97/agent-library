@@ -190,7 +190,7 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  // Check for alternative titles that might be in the data
+  // Handle alternative titles that should route to the same pages
   if (title === "Password Management") {
     return (
       <Link to="/password-reset" className="block">
