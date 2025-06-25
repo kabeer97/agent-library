@@ -15,6 +15,7 @@ import MultiFactorAuthentication from "./pages/MultiFactorAuthentication";
 import SoftwareAccessAvailability from "./pages/SoftwareAccessAvailability";
 import DeviceReplacementRepair from "./pages/DeviceReplacementRepair";
 import HardwareTroubleshooting from "./pages/HardwareTroubleshooting";
+import PrinterScannerSupport from "./pages/PrinterScannerSupport";
 import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/software-access-availability" element={<SoftwareAccessAvailability />} />
           <Route path="/device-replacement-repair" element={<DeviceReplacementRepair />} />
           <Route path="/hardware-troubleshooting" element={<HardwareTroubleshooting />} />
+          <Route path="/printer-scanner-support" element={<PrinterScannerSupport />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

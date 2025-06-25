@@ -206,6 +206,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
+  if (title === "Printer & Scanner Support") {
+    return (
+      <Link to="/printer-scanner-support" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // Handle alternative titles that should route to the same pages
   if (title === "Password Management") {
     return (
