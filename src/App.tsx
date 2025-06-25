@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,7 @@ import HardwareTroubleshooting from "./pages/HardwareTroubleshooting";
 import PrinterScannerSupport from "./pages/PrinterScannerSupport";
 import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
+import MobileDeviceManagement from "./pages/MobileDeviceManagement";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +40,7 @@ const App = () => (
           <Route path="/device-replacement-repair" element={<DeviceReplacementRepair />} />
           <Route path="/hardware-troubleshooting" element={<HardwareTroubleshooting />} />
           <Route path="/printer-scanner-support" element={<PrinterScannerSupport />} />
+          <Route path="/mobile-device-management" element={<MobileDeviceManagement />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

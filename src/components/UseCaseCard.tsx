@@ -214,6 +214,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
+  if (title === "Mobile Device Management") {
+    return (
+      <Link to="/mobile-device-management" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // Handle alternative titles that should route to the same pages
   if (title === "Password Management") {
     return (
