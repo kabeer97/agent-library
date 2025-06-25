@@ -190,6 +190,22 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
+  if (title === "Device Replacement & Repair") {
+    return (
+      <Link to="/device-replacement-repair" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Hardware Troubleshooting") {
+    return (
+      <Link to="/hardware-troubleshooting" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // Handle alternative titles that should route to the same pages
   if (title === "Password Management") {
     return (

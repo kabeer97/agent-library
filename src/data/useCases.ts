@@ -1,4 +1,3 @@
-
 import { UseCase } from '@/types/useCase';
 
 export const useCases: UseCase[] = [
@@ -121,9 +120,9 @@ export const useCases: UseCase[] = [
   },
   {
     id: '10',
-    title: 'Computer Troubleshooting',
+    title: 'Hardware Troubleshooting',
     badges: [{ text: 'IT' }],
-    description: 'Assists users with diagnosing and resolving issues on their computers, such as software errors, hardware failures, and application errors. AI provides step-by-step guidance, automated fixes, and access to IT support resources.',
+    description: 'Assists users in diagnosing and resolving issues across all hardware devices—including desktops, laptops, monitors, printers, and peripherals. From slow performance and connectivity issues to system errors or device malfunctions, the AI provides step-by-step guidance or escalates with a detailed IT ticket when manual support is required, minimizing downtime and ensuring faster resolutions.',
     integrations: [
       { src: '/lovable-uploads/21966555-59e5-4639-bed4-e4f5fe616f98.png', alt: 'TeamViewer', type: 'image' },
       { src: '/lovable-uploads/c13e60b6-c935-46de-8e3c-3534e5c4e7fb.png', alt: 'AnyDesk', type: 'image' },
@@ -280,7 +279,7 @@ export const useCases: UseCase[] = [
     id: '22',
     title: 'Outline Workshop Agenda for Sales',
     badges: [{ text: 'Sales' }],
-    description: 'Agentic AI can help you create customized workshop agendas based on the prospect’s business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
+    description: 'Agentic AI can help you create customized workshop agendas based on the prospect's business needs, stakeholder profiles, prior engagements, and strategic objectives. It ensures that sessions are productive, aligned with sales goals, and demonstrate value to all attendees; all while reducing planning overhead.',
     integrations: [
       { src: '/lovable-uploads/b66ee5ba-48ca-430d-b1ad-6d03c22683af.png', alt: 'Salesforce', type: 'image' },
       { src: '/lovable-uploads/8520945c-2777-4a26-b0e2-ee7f61883b62.png', alt: 'Notion', type: 'image' },
@@ -293,7 +292,7 @@ export const useCases: UseCase[] = [
     id: '23',
     title: 'Target Account Research',
     badges: [{ text: 'Sales' }],
-    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account’s current landscape, pain points, and buying signals—saving hours of manual research.',
+    description: 'Automates account research by gathering and synthesizing company news, executive changes, financials, hiring trends, and social sentiment. It delivers sales-ready briefs that help reps quickly understand an account's current landscape, pain points, and buying signals—saving hours of manual research.',
     integrations: [
       { src: '/lovable-uploads/f1ab4f02-4399-4f6e-87d7-ecfdf8953ec3.png', alt: 'LinkedIn Sales', type: 'image' },
       { src: '/lovable-uploads/992b38b4-1de0-4e5a-9c8f-02fc6eded02e.png', alt: 'Navigator', type: 'image' },
