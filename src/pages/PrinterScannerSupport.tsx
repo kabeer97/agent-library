@@ -1,183 +1,145 @@
 
 import React from 'react';
-import { ArrowLeft, CheckCircle, Users, Wrench, Settings, HelpCircle } from 'lucide-react';
+import { Header } from '@/components/Header';
 import { Link } from 'react-router-dom';
 
-const PrinterScannerSupport = () => {
+const PrinterScannerSupport: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        {/* Back Button */}
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-6 transition-colors"
-        >
-          <ArrowLeft size={20} />
-          Back to Use Cases
-        </Link>
+    <div className="bg-white min-h-screen">
+      <Header />
+      
+      <main className="px-[150px] py-12 max-md:px-5">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+          <Link to="/" className="hover:text-gray-900">AI Agent Library</Link>
+          <span>›</span>
+          <span className="text-gray-900">Printer & Scanner Support</span>
+        </nav>
 
-        {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <div className="flex items-start gap-6">
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <Settings className="w-8 h-8 text-blue-600" />
-            </div>
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <div className="relative mb-12">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 rounded-3xl p-12 relative overflow-hidden">
+            <div className="relative z-10">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Printer & Scanner Support
               </h1>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-lg text-gray-700 max-w-2xl">
                 Guides users through common printer/scanner issues, such as connection problems, paper jams, or low ink. AI provides troubleshooting steps, driver updates, and paper jam steps. If unresolved, it facilitates ticket creation.
               </p>
-              <div className="flex items-center gap-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                  IT
-                </span>
-                <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                  Type: Installable
-                </span>
-              </div>
             </div>
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-300 to-transparent opacity-30 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
           </div>
         </div>
 
-        {/* Key Benefits */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <CheckCircle className="w-6 h-6 text-green-600" />
-            Key Benefits
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">1. Instant Device Discovery</h3>
-              <p className="text-gray-600">AI locates and configures nearby devices.</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1 space-y-8">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">Information</h3>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Solutions:</span>
+                  <span className="font-medium">IT</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Connectors:</span>
+                  <div className="flex gap-1">
+                    <div className="w-5 h-5 bg-blue-500 rounded"></div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Type:</span>
+                  <span className="font-medium">Agent</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Availability:</span>
+                  <span className="font-medium">Built in</span>
+                </div>
+              </div>
             </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">2. Connectivity Issue Detection</h3>
-              <p className="text-gray-600">Quickly troubleshoots network and driver issues.</p>
-            </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">3. Usage Instructions Included</h3>
-              <p className="text-gray-600">Helps users with common printer tasks.</p>
-            </div>
-            <div className="p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">4. Reduced Manual IT Help</h3>
-              <p className="text-gray-600">Fewer tickets for routine printing issues.</p>
-            </div>
-          </div>
-        </div>
 
-        {/* Integrations */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <Wrench className="w-6 h-6 text-blue-600" />
-            Supported Integrations
-          </h2>
-          <div className="flex flex-wrap gap-4">
-            <div className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg">
-              <img 
-                src="/lovable-uploads/11b21718-07cd-4b7f-b466-fbffaedd307f.png" 
-                alt="HP Web Jetadmin" 
-                className="w-8 h-8 object-contain"
-              />
-              <span className="font-medium text-gray-900">HP Web Jetadmin</span>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">Key Benefits</h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-1">Instant Device Discovery</h4>
+                  <p className="text-sm text-gray-600">AI locates and configures nearby devices.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-1">Connectivity Issue Detection</h4>
+                  <p className="text-sm text-gray-600">Quickly troubleshoots network and driver issues.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-1">Usage Instructions Included</h4>
+                  <p className="text-sm text-gray-600">Helps users with common printer tasks.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-1">Reduced Manual IT Help</h4>
+                  <p className="text-sm text-gray-600">Fewer tickets for routine printing issues.</p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg">
-              <img 
-                src="/lovable-uploads/eaa34795-b4c8-4dbd-bc09-e5ba0641128e.png" 
-                alt="Xerox FreeFlow" 
-                className="w-8 h-8 object-contain"
-              />
-              <span className="font-medium text-gray-900">Xerox FreeFlow</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg">
-              <img 
-                src="/lovable-uploads/69f30c0b-2025-425a-b59d-8af826fda9f9.png" 
-                alt="Konica Minolta" 
-                className="w-8 h-8 object-contain"
-              />
-              <span className="font-medium text-gray-900">Konica Minolta</span>
-            </div>
-          </div>
-        </div>
 
-        {/* How It Works */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <Users className="w-6 h-6 text-purple-600" />
-            How It Works
-          </h2>
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Issue Detection</h3>
-                <p className="text-gray-600">AI automatically detects printer/scanner connectivity and performance issues.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Guided Troubleshooting</h3>
-                <p className="text-gray-600">Provides step-by-step instructions for common issues like paper jams, low ink, and driver problems.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Automatic Resolution</h3>
-                <p className="text-gray-600">Attempts to resolve issues automatically when possible, including driver updates and configuration fixes.</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">
-                4
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Escalation Support</h3>
-                <p className="text-gray-600">Creates detailed support tickets when issues require IT intervention.</p>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
+              <div className="space-y-2">
+                <a href="#" className="block text-purple-600 hover:text-purple-800 text-sm">Help Documentation</a>
+                <a href="#" className="block text-purple-600 hover:text-purple-800 text-sm">Submit Feedback</a>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Similar Agents */}
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-            <HelpCircle className="w-6 h-6 text-orange-600" />
-            Similar Agents
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link 
-              to="/hardware-troubleshooting"
-              className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-            >
-              <h3 className="font-semibold text-gray-900 mb-2">Hardware Troubleshooting</h3>
-              <p className="text-gray-600 text-sm">Comprehensive hardware diagnostics and repair guidance</p>
-            </Link>
-            <Link 
-              to="/device-replacement-repair"
-              className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-            >
-              <h3 className="font-semibold text-gray-900 mb-2">Device Replacement & Repair</h3>
-              <p className="text-gray-600 text-sm">Streamlined device replacement and repair workflows</p>
-            </Link>
-            <Link 
-              to="/software-access-availability"
-              className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
-            >
-              <h3 className="font-semibold text-gray-900 mb-2">Software Access & Availability</h3>
-              <p className="text-gray-600 text-sm">Software licensing and access management</p>
-            </Link>
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">Introduction</h3>
+              <p className="text-gray-700">
+                Guides users through common printer/scanner issues, such as connection problems, paper jams, or low ink. AI provides troubleshooting steps, driver updates, and paper jam steps. If unresolved, it facilitates ticket creation with detailed information to minimize resolution time and improve user productivity.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">Experience Preview</h3>
+              <div className="bg-purple-100 rounded-lg p-12 text-center">
+                <p className="text-gray-600">Screenshot of the use case will go here</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">Similar Agents</h3>
+              <p className="text-gray-700 mb-6">
+                Browse agents related to Printer & Scanner Support, or{' '}
+                <Link to="/" className="text-purple-600 hover:text-purple-800">
+                  view all agents in our library
+                </Link>
+                .
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Hardware Troubleshooting</h4>
+                  <p className="text-sm text-gray-600 mb-2">IT</p>
+                  <p className="text-sm text-gray-700">
+                    Comprehensive hardware diagnostics and resolution across all device types.
+                  </p>
+                </div>
+                
+                <div className="border rounded-lg p-4">
+                  <h4 className="font-medium text-gray-900 mb-2">Device Replacement & Repair</h4>
+                  <p className="text-sm text-gray-600 mb-2">IT</p>
+                  <p className="text-sm text-gray-700">
+                    Streamlined hardware issue reporting and repair workflows.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
