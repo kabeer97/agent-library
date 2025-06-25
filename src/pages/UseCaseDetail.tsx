@@ -60,8 +60,8 @@ const getLogoForIntegration = (name: string): string => {
 };
 
 const UseCaseDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const useCase = useCases.find(uc => uc.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const useCase = useCases.find(uc => uc.id === slug);
 
   if (!useCase) {
     return (
@@ -204,11 +204,11 @@ const UseCaseDetail: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Similar Plugins</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Similar Agents</h3>
               <p className="text-gray-700 mb-6">
-                Browse plugins related to {useCase.title}, or{' '}
+                Browse agents related to {useCase.title}, or{' '}
                 <Link to="/" className="text-blue-600 hover:text-blue-800">
-                  view all plugins in our library
+                  view all agents in our library
                 </Link>
                 .
               </p>

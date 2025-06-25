@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from '@/components/Header';
 import { ArrowLeft } from 'lucide-react';
@@ -50,7 +49,7 @@ const TicketViewingTracking: React.FC = () => {
                 
                 <div className="flex justify-between">
                   <span className="text-gray-600">Type:</span>
-                  <span className="font-medium">Plugin</span>
+                  <span className="font-medium">Agent</span>
                 </div>
                 
                 <div className="flex justify-between">
@@ -111,11 +110,11 @@ const TicketViewingTracking: React.FC = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Similar Plugins</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Similar Agents</h3>
               <p className="text-gray-700 mb-6">
-                Browse plugins related to Ticket Viewing & Tracking, or{' '}
+                Browse agents related to Ticket Viewing & Tracking, or{' '}
                 <Link to="/" className="text-purple-600 hover:text-purple-800">
-                  view all plugins in our library
+                  view all agents in our library
                 </Link>
                 .
               </p>
