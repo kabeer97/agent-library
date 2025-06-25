@@ -229,6 +229,30 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
+  if (title === "Leave Request Management") {
+    return (
+      <Link to="/leave-request-management" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Training Management") {
+    return (
+      <Link to="/training-management" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Job Referral") {
+    return (
+      <Link to="/job-referral" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // Handle alternative titles that should route to the same pages
   if (title === "Password Management") {
     return (

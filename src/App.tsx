@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +21,9 @@ import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 import MobileDeviceManagement from "./pages/MobileDeviceManagement";
 import VpnSupport from "./pages/VpnSupport";
+import LeaveRequestManagement from "./pages/LeaveRequestManagement";
+import TrainingManagement from "./pages/TrainingManagement";
+import JobReferral from "./pages/JobReferral";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +49,9 @@ const App = () => (
           <Route path="/printer-scanner-support" element={<PrinterScannerSupport />} />
           <Route path="/mobile-device-management" element={<MobileDeviceManagement />} />
           <Route path="/vpn-support" element={<VpnSupport />} />
+          <Route path="/leave-request-management" element={<LeaveRequestManagement />} />
+          <Route path="/training-management" element={<TrainingManagement />} />
+          <Route path="/job-referral" element={<JobReferral />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
