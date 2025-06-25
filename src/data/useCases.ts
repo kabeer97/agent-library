@@ -224,7 +224,7 @@ export const useCases: UseCase[] = [
   },
   {
     id: '18',
-    title: 'Employee Informarion Change',
+    title: 'Employee Information Change',
     badges: [{ text: 'HR' }],
     description: 'Agentic AI enables employees to easily update their contact details, such as phone numbers or personal email addresses, through a guided, error-proof process. Changes are automatically synced across HR systems to maintain data accuracy, reduce administrative overhead, and ensure reliable communication channels.',
     integrations: [
