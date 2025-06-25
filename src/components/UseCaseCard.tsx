@@ -73,16 +73,7 @@ const getLogoForIntegration = (name: string): string => {
     'Swift': '/lovable-uploads/f01557f7-d315-4a75-9046-c9bbf395c5bc.png',
   };
   
-  return logoMap[name] || '/placeholder.svg';
-};
-
-export const UseCaseCard: React.FC<UseCaseCardProps> = ({
-  title,
-  badges,
-  description,
-  integrations,
-}) => {
-  const cardContent = (
+  return (
     <article className="w-full rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:shadow-md">
       <header className="items-stretch flex w-full gap-3 font-semibold">
         <div className="items-stretch flex min-w-60 w-full flex-col flex-1 shrink basis-[0%] gap-1">
@@ -253,7 +244,30 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
     );
   }
 
-  // Handle alternative titles that should route to the same pages
+  if (title === "Employee Recognition") {
+    return (
+      <Link to="/employee-recognition" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Health Coverage Viewing") {
+    return (
+      <Link to="/health-coverage-viewing" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Summarize Customer Status") {
+    return (
+      <Link to="/summarize-customer-status" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   if (title === "Password Management") {
     return (
       <Link to="/password-reset" className="block">

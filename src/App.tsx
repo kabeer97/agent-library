@@ -24,6 +24,9 @@ import VpnSupport from "./pages/VpnSupport";
 import LeaveRequestManagement from "./pages/LeaveRequestManagement";
 import TrainingManagement from "./pages/TrainingManagement";
 import JobReferral from "./pages/JobReferral";
+import EmployeeRecognition from "./pages/EmployeeRecognition";
+import HealthCoverageViewing from "./pages/HealthCoverageViewing";
+import SummarizeCustomerStatus from "./pages/SummarizeCustomerStatus";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +55,9 @@ const App = () => (
           <Route path="/leave-request-management" element={<LeaveRequestManagement />} />
           <Route path="/training-management" element={<TrainingManagement />} />
           <Route path="/job-referral" element={<JobReferral />} />
+          <Route path="/employee-recognition" element={<EmployeeRecognition />} />
+          <Route path="/health-coverage-viewing" element={<HealthCoverageViewing />} />
+          <Route path="/summarize-customer-status" element={<SummarizeCustomerStatus />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
