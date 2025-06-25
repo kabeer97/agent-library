@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -217,6 +216,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   if (title === "Mobile Device Management") {
     return (
       <Link to="/mobile-device-management" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "VPN Support") {
+    return (
+      <Link to="/vpn-support" className="block">
         {cardContent}
       </Link>
     );
