@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Link } from 'react-router-dom';
@@ -52,7 +53,12 @@ const EmployeeRecognition: React.FC = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">7/10</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Actions:</span>
                   <span className="font-medium">5</span>
                 </div>
               </div>
