@@ -344,6 +344,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
     );
   }
 
+  if (title === "Create a Meeting Agenda for Contract Review") {
+    return (
+      <Link to="/create-meeting-agenda-for-contract-review" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // For all other use cases, create a slug from the title and link to the dynamic route
   const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   
