@@ -1,142 +1,250 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, RefreshCw, Bell, Shield } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowLeft } from 'lucide-react';
 
 const EmployeeInformationChange = () => {
-  const benefits = [
-    {
-      icon: <CheckCircle className="h-8 w-8 text-blue-600" />,
-      title: "Guided Update Process",
-      description: "Walks users through information changes."
-    },
-    {
-      icon: <RefreshCw className="h-8 w-8 text-green-600" />,
-      title: "Auto-Sync to Payroll",
-      description: "Ensures records align for tax/forms."
-    },
-    {
-      icon: <Bell className="h-8 w-8 text-orange-600" />,
-      title: "Confirmation Notifications",
-      description: "Sends alerts once change is processed."
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-purple-600" />,
-      title: "Reduces Compliance Risk",
-      description: "Keeps employee data up to date."
-    }
-  ];
-
-  const integrations = [
-    { name: 'Workday', logo: '/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png' },
-    { name: 'SAP', logo: '/lovable-uploads/3c6b5624-f5a4-48c0-ace7-362516efbfda.png' },
-    { name: 'BambooHR', logo: '/lovable-uploads/584c3f69-7e72-42be-9ae9-20ef2238179b.png' }
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {/* Header with green banner */}
+      <div className="bg-green-400 text-white text-center py-2 text-sm">
+        Aisera Named Gartner Magic Quadrant Leader in AI Apps for ITSM
+      </div>
+      
+      {/* Navigation Header */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link 
-              to="/" 
-              className="flex items-center text-sm text-gray-600 hover:text-gray-900"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Use Cases
-            </Link>
+            <div className="flex items-center">
+              <span className="text-2xl font-bold">🔧 Aisera</span>
+              <nav className="ml-8 flex space-x-8">
+                <button className="text-gray-700 hover:text-gray-900">Platform ▼</button>
+                <button className="text-gray-700 hover:text-gray-900">Solutions ▼</button>
+                <button className="text-gray-700 hover:text-gray-900">Customers ▼</button>
+                <button className="text-gray-700 hover:text-gray-900">Resources ▼</button>
+              </nav>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-700 hover:text-gray-900">AiseraPlay</button>
+              <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+                Get a Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav className="flex items-center space-x-2 text-sm text-gray-600">
+          <Link to="/" className="hover:text-gray-900">Home</Link>
+          <span>›</span>
+          <Link to="/" className="hover:text-gray-900">Browse</Link>
+          <span>›</span>
+          <span className="text-gray-900">Employee Information Change</span>
+        </nav>
+      </div>
+
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="bg-gradient-to-r from-green-200 to-green-300 rounded-3xl p-8 relative overflow-hidden">
+          <div className="relative z-10">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Employee Information Change
+            </h1>
+            <p className="text-lg text-gray-800 max-w-2xl">
+              Enabling users to update their contact details, such as phone numbers or personal email addresses, with proper validation for efficient processing.
+            </p>
+          </div>
+          {/* Decorative background element */}
+          <div className="absolute top-0 right-0 w-1/2 h-full opacity-30">
+            <div className="w-full h-full bg-gradient-to-l from-green-400 to-transparent rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Section */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-              HR
-            </span>
-            <span className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-              Guide
-            </span>
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Employee Information Change
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            Agentic AI enables employees to easily update their contact details, such as phone numbers or personal email addresses, through a guided, error-proof process. Changes are automatically synced across HR systems to maintain data accuracy, reduce administrative overhead, and ensure reliable communication channels.
-          </p>
-        </div>
-
-        {/* Key Benefits */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    {benefit.icon}
-                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Left Sidebar */}
+          <div className="lg:col-span-1 space-y-8">
+            {/* Information Section */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4">Information</h3>
+              
+              <div className="space-y-3 text-sm">
+                <div>
+                  <span className="text-gray-600">Solutions:</span>
+                  <div className="mt-1">
+                    <span className="font-medium">HR</span>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {benefit.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Integrations */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Integrations</h2>
-          <Card>
-            <CardHeader>
-              <CardTitle>Compatible Systems</CardTitle>
-              <CardDescription>
-                Seamlessly integrates with your existing HR platforms
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-8">
-                {integrations.map((integration, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <img 
-                      src={integration.logo} 
-                      alt={integration.name}
-                      className="w-8 h-8 object-contain"
-                    />
-                    <span className="text-sm font-medium text-gray-700">
-                      {integration.name}
-                    </span>
+                </div>
+                
+                <div>
+                  <span className="text-gray-600">Connectors:</span>
+                  <div className="mt-1 flex gap-2">
+                    <div className="flex items-center gap-1">
+                      <img 
+                        src="/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png" 
+                        alt="Workday"
+                        className="w-5 h-5 object-contain"
+                      />
+                      <img 
+                        src="/lovable-uploads/3c6b5624-f5a4-48c0-ace7-362516efbfda.png" 
+                        alt="SAP"
+                        className="w-5 h-5 object-contain"
+                      />
+                      <img 
+                        src="/lovable-uploads/584c3f69-7e72-42be-9ae9-20ef2238179b.png" 
+                        alt="BambooHR"
+                        className="w-5 h-5 object-contain"
+                      />
+                    </div>
                   </div>
-                ))}
+                </div>
+                
+                <div>
+                  <span className="text-gray-600">Type:</span>
+                  <div className="mt-1">
+                    <span className="font-medium">Plugin</span>
+                  </div>
+                </div>
+                
+                <div>
+                  <span className="text-gray-600">Install Time:</span>
+                  <div className="mt-1">
+                    <span className="font-medium">20 minutes</span>
+                  </div>
+                </div>
+                
+                <div>
+                  <span className="text-gray-600">Availability:</span>
+                  <div className="mt-1">
+                    <span className="font-medium">Template</span>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <Card className="bg-blue-50 border-blue-200">
-            <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Ready to streamline employee information updates?
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Implement guided information change processes that keep your HR systems synchronized and compliant.
+            {/* Key Benefits */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4">Key Benefits</h3>
+              
+              <div className="space-y-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Guided Update Process</h4>
+                  <p className="text-gray-600">Walks users through information changes.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Auto-Sync to Payroll</h4>
+                  <p className="text-gray-600">Ensures records align for tax/forms.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Confirmation Notifications</h4>
+                  <p className="text-gray-600">Sends alerts once change is processed.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Reduces Compliance Risk</h4>
+                  <p className="text-gray-600">Keeps employee data up to date.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Support */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
+              <div className="space-y-2 text-sm">
+                <a href="#" className="block text-blue-600 hover:text-blue-800">Help Documentation</a>
+                <a href="#" className="block text-blue-600 hover:text-blue-800">Submit Feedback</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="lg:col-span-3 space-y-8">
+            {/* Introduction */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Introduction</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Enabling users to update their contact details, such as phone numbers or personal email addresses, with proper validation for efficient processing.
               </p>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                Get Started
-              </button>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Experience Preview */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience Preview</h3>
+              <div className="bg-gradient-to-br from-purple-100 via-pink-50 to-orange-100 rounded-lg aspect-video flex items-center justify-center">
+                <p className="text-gray-600">Experience preview will be available soon</p>
+              </div>
+            </div>
+
+            {/* Similar Plugins */}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Similar Plugins</h3>
+              <p className="text-gray-700 mb-6">
+                Browse plugins related to Employee Information Change, or{' '}
+                <Link to="/" className="text-blue-600 hover:text-blue-800">
+                  view all plugins in our library
+                </Link>
+                .
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Similar Plugin Cards */}
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Leave Request Management</h4>
+                  <p className="text-sm text-gray-600 mb-2">HR • HR Time and Attendance</p>
+                  <p className="text-sm text-gray-700 mb-3">
+                    A flow that allows employees to request time off, with proper approval workflows.
+                  </p>
+                  <div className="flex gap-2">
+                    <img src="/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png" alt="Workday" className="w-4 h-4" />
+                    <img src="/lovable-uploads/3c6b5624-f5a4-48c0-ace7-362516efbfda.png" alt="SAP" className="w-4 h-4" />
+                    <img src="/lovable-uploads/584c3f69-7e72-42be-9ae9-20ef2238179b.png" alt="BambooHR" className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Employee Recognition</h4>
+                  <p className="text-sm text-gray-600 mb-2">HR • Finance</p>
+                  <p className="text-sm text-gray-700 mb-3">
+                    A flow that helps managers recognize employee achievements and contributions.
+                  </p>
+                  <div className="flex gap-2">
+                    <img src="/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png" alt="Workday" className="w-4 h-4" />
+                    <img src="/lovable-uploads/584c3f69-7e72-42be-9ae9-20ef2238179b.png" alt="BambooHR" className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Training Management</h4>
+                  <p className="text-sm text-gray-600 mb-2">HR • Finance</p>
+                  <p className="text-sm text-gray-700 mb-3">
+                    A flow that helps hiring managers or HR create and submit job descriptions for new or replacement roles.
+                  </p>
+                  <div className="flex gap-2">
+                    <img src="/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png" alt="Workday" className="w-4 h-4" />
+                    <img src="/lovable-uploads/3c6b5624-f5a4-48c0-ace7-362516efbfda.png" alt="SAP" className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Health Coverage Viewing</h4>
+                  <p className="text-sm text-gray-600 mb-2">HR • Finance</p>
+                  <p className="text-sm text-gray-700 mb-3">
+                    A flow that helps employees view and understand their health coverage options and benefits.
+                  </p>
+                  <div className="flex gap-2">
+                    <img src="/lovable-uploads/13cc5a7e-6590-4bc7-8ee5-207edce80763.png" alt="Workday" className="w-4 h-4" />
+                    <img src="/lovable-uploads/48e560b0-0e51-4cf3-b6ae-95f90492b0d2.png" alt="ADP" className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
