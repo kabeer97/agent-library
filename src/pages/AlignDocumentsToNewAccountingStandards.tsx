@@ -71,7 +71,7 @@ const AlignDocumentsToNewAccountingStandards = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="text-gray-600">Number of Actions:</span>
                   <span className="font-medium">7</span>
                 </div>
               </div>
