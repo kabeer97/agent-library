@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -284,6 +283,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
   if (title === "Recap Customer Meetings") {
     return (
       <Link to="/recap-customer-meetings" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Outline Workshop Agenda for Sales") {
+    return (
+      <Link to="/outline-workshop-agenda" className="block">
         {cardContent}
       </Link>
     );
