@@ -119,7 +119,6 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
     </article>
   );
 
-  // Check for specific use case titles and route accordingly
   if (title === "Ticket Viewing & Tracking") {
     return (
       <Link to="/ticket-viewing-tracking" className="block">
@@ -347,6 +346,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
   if (title === "Create a Meeting Agenda for Contract Review") {
     return (
       <Link to="/create-meeting-agenda-for-contract-review" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  if (title === "Letters of Credit for Corporate Banking") {
+    return (
+      <Link to="/letters-of-credit-for-corporate-banking" className="block">
         {cardContent}
       </Link>
     );

@@ -34,6 +34,7 @@ import IdentifyHighChurnRiskCustomer from "./pages/IdentifyHighChurnRiskCustomer
 import AlignDocumentsToNewAccountingStandards from "./pages/AlignDocumentsToNewAccountingStandards";
 import TrainNewEmployeesOnFinanceProcesses from "./pages/TrainNewEmployeesOnFinanceProcesses";
 import CreateMeetingAgendaForContractReview from "./pages/CreateMeetingAgendaForContractReview";
+import LettersOfCreditForCorporateBanking from "./pages/LettersOfCreditForCorporateBanking";
 
 const queryClient = new QueryClient();
 
@@ -73,6 +74,7 @@ const App = () => (
           <Route path="/align-documents-to-new-accounting-standards" element={<AlignDocumentsToNewAccountingStandards />} />
           <Route path="/train-new-employees-on-finance-processes" element={<TrainNewEmployeesOnFinanceProcesses />} />
           <Route path="/create-meeting-agenda-for-contract-review" element={<CreateMeetingAgendaForContractReview />} />
+          <Route path="/letters-of-credit-for-corporate-banking" element={<LettersOfCreditForCorporateBanking />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
