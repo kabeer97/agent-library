@@ -320,6 +320,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({ title, badges, descrip
     );
   }
 
+  if (title === "Identify High Churn Risk Customer") {
+    return (
+      <Link to="/identify-high-churn-risk-customer" className="block">
+        {cardContent}
+      </Link>
+    );
+  }
+
   // For all other use cases, create a slug from the title and link to the dynamic route
   const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   
