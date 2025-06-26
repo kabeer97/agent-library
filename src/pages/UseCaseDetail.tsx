@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Header } from '@/components/Header';
@@ -93,16 +94,19 @@ const UseCaseDetail: React.FC = () => {
         </nav>
 
         <div className="relative mb-8">
-          <div className="bg-gradient-to-r from-green-100 to-green-200 rounded-3xl p-8 relative overflow-hidden">
-            <div className="relative z-10">
-              <h1 className="text-3xl font-bold text-gray-900 mb-3">
+          <div className="bg-gradient-to-r from-green-200 via-green-100 to-green-50 rounded-[40px] px-12 py-16 relative overflow-hidden">
+            <div className="relative z-10 max-w-4xl">
+              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 {useCase.title}
               </h1>
-              <p className="text-gray-700 max-w-3xl">
+              <p className="text-xl text-gray-700 max-w-3xl leading-relaxed">
                 {useCase.description}
               </p>
             </div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-300 to-transparent opacity-30 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute top-0 right-0 w-2/3 h-full opacity-20">
+              <div className="absolute top-4 right-8 w-96 h-96 bg-green-300 rounded-full transform rotate-12"></div>
+              <div className="absolute bottom-8 right-16 w-64 h-64 bg-green-400 rounded-full transform -rotate-12"></div>
+            </div>
           </div>
         </div>
 
