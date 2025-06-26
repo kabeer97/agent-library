@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Link } from 'react-router-dom';
@@ -64,6 +63,16 @@ const TrainNewEmployeesOnFinanceProcesses = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Type:</span>
                   <span className="font-medium">Built in</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">8/10</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Actions:</span>
+                  <span className="font-medium">6</span>
                 </div>
                 
                 <div className="flex justify-between">

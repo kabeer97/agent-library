@@ -61,6 +61,16 @@ const TargetAccountResearch = () => {
                 </div>
                 
                 <div className="flex justify-between">
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">8/10</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Actions:</span>
+                  <span className="font-medium">7</span>
+                </div>
+                
+                <div className="flex justify-between">
                   <span className="text-gray-600">Install Time:</span>
                   <span className="font-medium">20 minutes</span>
                 </div>
