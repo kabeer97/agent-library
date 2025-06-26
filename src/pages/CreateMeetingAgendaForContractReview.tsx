@@ -69,6 +69,11 @@ const CreateMeetingAgendaForContractReview = () => {
                   <span className="text-gray-600">Effectivity Score:</span>
                   <span className="font-medium">9/10</span>
                 </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="font-medium">6</span>
+                </div>
               </div>
             </div>
 

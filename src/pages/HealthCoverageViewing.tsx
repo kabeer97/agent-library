@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Link } from 'react-router-dom';
@@ -53,8 +52,8 @@ const HealthCoverageViewing: React.FC = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Availability:</span>
-                  <span className="font-medium">Built in</span>
+                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="font-medium">4</span>
                 </div>
               </div>
             </div>

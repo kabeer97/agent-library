@@ -50,6 +50,11 @@ const DeviceReplacementRepair: React.FC = () => {
                   <span className="text-gray-600">Type:</span>
                   <span className="font-medium">Agent</span>
                 </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="font-medium">7</span>
+                </div>
               </div>
             </div>
 
