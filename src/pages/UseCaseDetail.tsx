@@ -3,6 +3,13 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { useCases } from '@/data/useCases';
+import { UseCaseBreadcrumb } from '@/components/usecase/UseCaseBreadcrumb';
+import { UseCaseHeroBanner } from '@/components/usecase/UseCaseHeroBanner';
+import { DetailedInformationSidebar } from '@/components/usecase/DetailedInformationSidebar';
+import { DetailedKeyBenefits } from '@/components/usecase/DetailedKeyBenefits';
+import { SupportLinks } from '@/components/usecase/SupportLinks';
+import { ExperiencePreview } from '@/components/usecase/ExperiencePreview';
+import { DetailedSimilarAgents } from '@/components/usecase/DetailedSimilarAgents';
 
 // Logo mapping function (same as in UseCaseCard)
 const getLogoForIntegration = (name: string): string => {
@@ -85,111 +92,19 @@ const UseCaseDetail: React.FC = () => {
       <Header />
       
       <main className="px-[150px] py-8 max-md:px-5">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-          <Link to="/" className="hover:text-gray-900">Home</Link>
-          <span>›</span>
-          <Link to="/" className="hover:text-gray-900">Browse</Link>
-          <span>›</span>
-          <span className="text-gray-900">{useCase.title}</span>
-        </nav>
-
-        <div className="relative mb-8">
-          <div className="bg-gradient-to-r from-green-200 via-green-100 to-green-50 rounded-[40px] px-12 py-16 relative overflow-hidden">
-            <div className="relative z-10 max-w-4xl">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {useCase.title}
-              </h1>
-              <p className="text-xl text-gray-700 max-w-3xl leading-relaxed">
-                {useCase.description}
-              </p>
-            </div>
-            <div className="absolute top-0 right-0 w-2/3 h-full opacity-20">
-              <div className="absolute top-4 right-8 w-96 h-96 bg-green-300 rounded-full transform rotate-12"></div>
-              <div className="absolute bottom-8 right-16 w-64 h-64 bg-green-400 rounded-full transform -rotate-12"></div>
-            </div>
-          </div>
-        </div>
+        <UseCaseBreadcrumb title={useCase.title} />
+        <UseCaseHeroBanner title={useCase.title} description={useCase.description} />
 
         <div className="flex gap-8 max-lg:flex-col">
           <div className="w-80 max-lg:w-full space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Information</h3>
-              
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Solutions:</span>
-                  <span className="font-medium">{useCase.category.join(', ')}</span>
-                </div>
-                
-                <div className="flex justify-between items-start">
-                  <span className="text-gray-600">Connectors:</span>
-                  <div className="flex gap-1 flex-wrap max-w-32">
-                    {useCase.integrations.slice(0, 3).map((integration, index) => (
-                      <div key={index} className="w-5 h-5">
-                        <img
-                          src={getLogoForIntegration(integration.alt)}
-                          alt={integration.alt}
-                          className="w-5 h-5 object-contain"
-                          title={integration.alt}
-                        />
-                      </div>
-                    ))}
-                    {useCase.integrations.length > 3 && (
-                      <span className="text-xs text-gray-500">+{useCase.integrations.length - 3}</span>
-                    )}
-                  </div>
-                </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Type:</span>
-                  <span className="font-medium">{useCase.type}</span>
-                </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Install Time:</span>
-                  <span className="font-medium">20 minutes</span>
-                </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Availability:</span>
-                  <span className="font-medium">Template</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Key Benefits</h3>
-              
-              <div className="space-y-4 text-sm">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Real-Time Status Visibility</h4>
-                  <p className="text-gray-600">Users get instant access to progress without needing to contact support.</p>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Unified History</h4>
-                  <p className="text-gray-600">All past and active items are accessible in one place across channels.</p>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Proactive Updates & Alerts</h4>
-                  <p className="text-gray-600">Agentic AI can notify users of changes or request actions when needed.</p>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Reduced Support Workload</h4>
-                  <p className="text-gray-600">Fewer status-related inquiries free up agents for higher-value tasks.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Support</h3>
-              <div className="space-y-2 text-sm">
-                <a href="#" className="block text-blue-600 hover:text-blue-800">Help Documentation</a>
-                <a href="#" className="block text-blue-600 hover:text-blue-800">Submit Feedback</a>
-              </div>
-            </div>
+            <DetailedInformationSidebar 
+              category={useCase.category}
+              integrations={useCase.integrations}
+              type={useCase.type}
+              getLogoForIntegration={getLogoForIntegration}
+            />
+            <DetailedKeyBenefits />
+            <SupportLinks />
           </div>
 
           <div className="flex-1 space-y-8">
@@ -200,56 +115,11 @@ const UseCaseDetail: React.FC = () => {
               </p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Experience Preview</h3>
-              <div className="bg-gradient-to-br from-purple-100 via-pink-50 to-orange-100 rounded-lg aspect-video flex items-center justify-center">
-                <p className="text-gray-600">Experience preview will be available soon</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Similar Agents</h3>
-              <p className="text-gray-700 mb-6">
-                Browse agents related to {useCase.title}, or{' '}
-                <Link to="/" className="text-blue-600 hover:text-blue-800">
-                  view all agents in our library
-                </Link>
-                .
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {useCases
-                  .filter(uc => uc.id !== useCase.id && uc.category.some(cat => useCase.category.includes(cat)))
-                  .slice(0, 6)
-                  .map((similarUseCase) => (
-                    <Link
-                      key={similarUseCase.id}
-                      to={`/use-case/${similarUseCase.id}`}
-                      className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
-                    >
-                      <h4 className="font-semibold text-gray-900 mb-2">{similarUseCase.title}</h4>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-sm text-gray-600">{similarUseCase.category.join(', ')}</span>
-                        <div className="flex gap-1">
-                          {similarUseCase.integrations.slice(0, 3).map((integration, index) => (
-                            <div key={index} className="w-4 h-4">
-                              <img
-                                src={getLogoForIntegration(integration.alt)}
-                                alt={integration.alt}
-                                className="w-4 h-4 object-contain"
-                                title={integration.alt}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <p className="text-sm text-gray-700 line-clamp-2">
-                        {similarUseCase.description}
-                      </p>
-                    </Link>
-                  ))}
-              </div>
-            </div>
+            <ExperiencePreview />
+            <DetailedSimilarAgents 
+              currentUseCase={useCase}
+              getLogoForIntegration={getLogoForIntegration}
+            />
           </div>
         </div>
       </main>
