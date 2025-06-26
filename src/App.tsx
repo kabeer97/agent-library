@@ -32,6 +32,7 @@ import OutlineWorkshopAgenda from "./pages/OutlineWorkshopAgenda";
 import TargetAccountResearch from "./pages/TargetAccountResearch";
 import IdentifyHighChurnRiskCustomer from "./pages/IdentifyHighChurnRiskCustomer";
 import AlignDocumentsToNewAccountingStandards from "./pages/AlignDocumentsToNewAccountingStandards";
+import TrainNewEmployeesOnFinanceProcesses from "./pages/TrainNewEmployeesOnFinanceProcesses";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => (
           <Route path="/target-account-research" element={<TargetAccountResearch />} />
           <Route path="/identify-high-churn-risk-customer" element={<IdentifyHighChurnRiskCustomer />} />
           <Route path="/align-documents-to-new-accounting-standards" element={<AlignDocumentsToNewAccountingStandards />} />
+          <Route path="/train-new-employees-on-finance-processes" element={<TrainNewEmployeesOnFinanceProcesses />} />
           <Route path="/use-case/:id" element={<UseCaseDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
