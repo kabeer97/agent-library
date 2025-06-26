@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Link } from 'react-router-dom';
@@ -50,6 +49,11 @@ const HardwareTroubleshooting: React.FC = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Type:</span>
                   <span className="font-medium">Agent</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">7/10</span>
                 </div>
                 
                 <div className="flex justify-between">
