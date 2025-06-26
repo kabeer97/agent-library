@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header } from '@/components/Header';
-import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TicketViewingTracking: React.FC = () => {
@@ -16,16 +15,16 @@ const TicketViewingTracking: React.FC = () => {
         </nav>
 
         <div className="relative mb-12">
-          <div className="bg-gradient-to-r from-green-100 to-green-200 rounded-3xl p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 rounded-3xl p-12 relative overflow-hidden">
             <div className="relative z-10">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Ticket Viewing & Tracking
               </h1>
               <p className="text-lg text-gray-700 max-w-2xl">
-                Real-time visibility into ticket status and progress with comprehensive tracking capabilities across all support channels.
+                Real-time ticket status monitoring and progress tracking with automated updates and stakeholder notifications.
               </p>
             </div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-300 to-transparent opacity-30 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-300 to-transparent opacity-30 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
           </div>
         </div>
 
@@ -37,7 +36,7 @@ const TicketViewingTracking: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Solutions:</span>
-                  <span className="font-medium">IT</span>
+                  <span className="font-medium">IT Service Management</span>
                 </div>
                 
                 <div className="flex justify-between">
@@ -54,7 +53,12 @@ const TicketViewingTracking: React.FC = () => {
                 
                 <div className="flex justify-between">
                   <span className="text-gray-600">Effectivity Score:</span>
-                  <span className="font-medium">9/10</span>
+                  <span className="font-medium">8/10</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="font-medium">6</span>
                 </div>
               </div>
             </div>

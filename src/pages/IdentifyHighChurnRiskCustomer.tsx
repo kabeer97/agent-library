@@ -100,13 +100,45 @@ const IdentifyHighChurnRiskCustomer = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-8">
-            <InformationSidebar 
-              solutions="Sales • Customer Success"
-              connectors={connectors}
-              type="Built in"
-              effectivityScore="8"
-              availability="Template"
-            />
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">Information</h3>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Solutions:</span>
+                  <span className="font-medium">Sales • Customer Success</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Connectors:</span>
+                  <div className="flex gap-1">
+                    {connectors.map((connector, index) => (
+                      <img 
+                        key={index}
+                        src={connector.src} 
+                        alt={connector.alt}
+                        className="w-5 h-5 object-contain"
+                      />
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Type:</span>
+                  <span className="font-medium">Built in</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">8/10</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Number of Interactions:</span>
+                  <span className="font-medium">9</span>
+                </div>
+              </div>
+            </div>
 
             <KeyBenefits benefits={benefits} />
 
