@@ -104,7 +104,7 @@ const IdentifyHighChurnRiskCustomer = () => {
               solutions="Sales • Customer Success"
               connectors={connectors}
               type="Built in"
-              installTime="20 minutes"
+              effectivityScore="8"
               availability="Template"
             />
 

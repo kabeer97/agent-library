@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '@/components/Header';
@@ -141,8 +142,8 @@ const ApprovalManagement: React.FC = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Install Time:</span>
-                  <span className="font-medium">20 minutes</span>
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">7/10</span>
                 </div>
                 
                 <div className="flex justify-between">

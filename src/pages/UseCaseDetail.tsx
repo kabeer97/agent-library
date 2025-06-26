@@ -71,6 +71,9 @@ const UseCaseDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const useCase = useCases.find(uc => uc.id === slug);
 
+  // Generate random effectivity score between 7-9
+  const effectivityScore = Math.floor(Math.random() * 3) + 7;
+
   if (!useCase) {
     return (
       <div className="bg-white min-h-screen">
@@ -101,6 +104,7 @@ const UseCaseDetail: React.FC = () => {
               category={useCase.category}
               integrations={useCase.integrations}
               type={useCase.type}
+              effectivityScore={effectivityScore.toString()}
               getLogoForIntegration={getLogoForIntegration}
             />
             <DetailedKeyBenefits />

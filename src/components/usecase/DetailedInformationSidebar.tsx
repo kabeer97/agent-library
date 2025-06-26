@@ -5,6 +5,7 @@ interface DetailedInformationSidebarProps {
   category: string[];
   integrations: Array<{ src: string; alt: string }>;
   type: string;
+  effectivityScore?: string;
   getLogoForIntegration: (name: string) => string;
 }
 
@@ -12,6 +13,7 @@ export const DetailedInformationSidebar: React.FC<DetailedInformationSidebarProp
   category,
   integrations,
   type,
+  effectivityScore,
   getLogoForIntegration
 }) => {
   return (
@@ -48,10 +50,12 @@ export const DetailedInformationSidebar: React.FC<DetailedInformationSidebarProp
           <span className="font-medium">{type}</span>
         </div>
         
-        <div className="flex justify-between">
-          <span className="text-gray-600">Install Time:</span>
-          <span className="font-medium">20 minutes</span>
-        </div>
+        {effectivityScore && (
+          <div className="flex justify-between">
+            <span className="text-gray-600">Effectivity Score:</span>
+            <span className="font-medium">{effectivityScore}/10</span>
+          </div>
+        )}
         
         <div className="flex justify-between">
           <span className="text-gray-600">Availability:</span>

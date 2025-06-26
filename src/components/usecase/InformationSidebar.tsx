@@ -5,7 +5,7 @@ interface InformationSidebarProps {
   solutions: string;
   connectors: Array<{ src: string; alt: string }>;
   type: string;
-  installTime?: string;
+  effectivityScore?: string;
   availability: string;
 }
 
@@ -13,7 +13,7 @@ export const InformationSidebar: React.FC<InformationSidebarProps> = ({
   solutions,
   connectors,
   type,
-  installTime,
+  effectivityScore,
   availability
 }) => {
   return (
@@ -45,10 +45,10 @@ export const InformationSidebar: React.FC<InformationSidebarProps> = ({
           <span className="font-medium">{type}</span>
         </div>
         
-        {installTime && (
+        {effectivityScore && (
           <div className="flex justify-between">
-            <span className="text-gray-600">Install Time:</span>
-            <span className="font-medium">{installTime}</span>
+            <span className="text-gray-600">Effectivity Score:</span>
+            <span className="font-medium">{effectivityScore}/10</span>
           </div>
         )}
         

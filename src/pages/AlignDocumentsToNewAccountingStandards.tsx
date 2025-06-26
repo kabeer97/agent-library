@@ -66,8 +66,8 @@ const AlignDocumentsToNewAccountingStandards = () => {
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Install Time:</span>
-                  <span className="font-medium">25 minutes</span>
+                  <span className="text-gray-600">Effectivity Score:</span>
+                  <span className="font-medium">8/10</span>
                 </div>
                 
                 <div className="flex justify-between">
