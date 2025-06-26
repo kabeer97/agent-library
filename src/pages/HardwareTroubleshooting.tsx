@@ -55,11 +55,6 @@ const HardwareTroubleshooting: React.FC = () => {
                   <span className="text-gray-600">Effectivity Score:</span>
                   <span className="font-medium">7/10</span>
                 </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Availability:</span>
-                  <span className="font-medium">Built in</span>
-                </div>
               </div>
             </div>
 

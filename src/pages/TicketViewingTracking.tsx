@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from '@/components/Header';
 import { ArrowLeft } from 'lucide-react';
@@ -56,11 +55,6 @@ const TicketViewingTracking: React.FC = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Effectivity Score:</span>
                   <span className="font-medium">9/10</span>
-                </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Availability:</span>
-                  <span className="font-medium">Template</span>
                 </div>
               </div>
             </div>
