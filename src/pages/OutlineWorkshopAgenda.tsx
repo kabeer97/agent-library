@@ -74,16 +74,6 @@ const OutlineWorkshopAgenda = () => {
                   <span className="text-gray-600">Number of Actions:</span>
                   <span className="font-medium">5</span>
                 </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Install Time:</span>
-                  <span className="font-medium">20 minutes</span>
-                </div>
-                
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Availability:</span>
-                  <span className="font-medium">Template</span>
-                </div>
               </div>
             </div>
 
